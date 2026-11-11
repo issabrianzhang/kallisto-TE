@@ -51,7 +51,7 @@ bash test/run_toy_test.sh
 |-------|------|------------|
 | Genome | `--genome` | Genome FASTA (`.fa` or `.fa.gz`), e.g. `GRCm38.primary_assembly.genome.fa.gz` |
 | Gene annotation | `--gtf` | GTF matching that genome (`.gtf` or `.gtf.gz`), e.g. `gencode.vM25.primary_assembly.annotation.gtf.gz` |
-| TE consensus sequences | `--repbase` or `--te-fasta` | RepBase archive from [girinst.org](https://www.girinst.org/repbase/), or any TE consensus FASTA |
+| TE consensus sequences | `--repbase`, `--te-fasta` or `--dfam` | A RepBase archive from [girinst.org](https://www.girinst.org/repbase/), any TE consensus FASTA, or the bundled open-access [Dfam libraries](te_libraries/dfam/) (Option D) |
 
 You do **not** supply a transcriptome FASTA. `kb ref` builds the
 transcriptome from the genome + GTF, so genes and TEs are extracted the same
@@ -61,7 +61,7 @@ way.
 `--species mouse` or `--species human`, leave out `--genome` and `--gtf`. The
 script downloads the GENCODE genome and GTF listed under
 [Ready-made presets](#ready-made-presets) into `<outdir>/reference/`. You only
-provide RepBase:
+provide RepBase, which we used for our own mouse and human indices:
 
 ```bash
 bash scripts/index/build_index.sh \
@@ -103,6 +103,41 @@ bash scripts/index/build_index.sh \
     --threads 8
 ```
 
+**Option D: no RepBase, use the bundled Dfam libraries.** The repository
+ships open-access Dfam 4.0 TE libraries (CC0) in
+[`te_libraries/dfam/`](te_libraries/dfam/README.md), so you can build an
+index straight after cloning, with nothing to register for or download. For
+mouse or human, swap `--repbase` for `--dfam` (combine it with Option A or B
+for the genome and GTF):
+
+```bash
+bash scripts/index/build_index.sh \
+    --species mouse \
+    --dfam \
+    --name    mm10_GencodeM25_Dfam4.0 \
+    --outdir  /path/to/references/mm10_Dfam_TE \
+    --threads 16
+```
+
+For zebrafish, fly, worm or *Arabidopsis*, pass the bundled file with
+`--species custom` (as in Option C):
+
+```bash
+bash scripts/index/build_index.sh \
+    --species custom \
+    --genome   /path/to/Danio_rerio.GRCz11.dna.primary_assembly.fa.gz \
+    --gtf      /path/to/Danio_rerio.GRCz11.<ensembl_release>.gtf.gz \
+    --te-fasta te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz \
+    --name     GRCz11_Dfam4.0 \
+    --outdir   /path/to/references/GRCz11_Dfam_TE \
+    --threads 8
+```
+
+For any other species in Dfam, download its library first with
+`python3 scripts/te_libraries/fetch_dfam.py --species "Rattus norvegicus" --out rat_Dfam4.0_curated`.
+Dfam and RepBase use different TE names and family sets, so pick one library
+per project (see [te_libraries/dfam](te_libraries/dfam/README.md)).
+
 Output used for quantification: `index/<name>_genes_TE.idx` and
 `index/t2g.txt`. TEs are the `t2g.txt` rows whose gene name starts with
 `TE:`.
@@ -123,11 +158,19 @@ Output used for quantification: `index/<name>_genes_TE.idx` and
 
 ### Ready-made presets
 
-| `--species` | Genome (downloaded unless you pass `--genome`) | Gene annotation (downloaded unless you pass `--gtf`) | TE library (RepBase files) |
+| `--species` | Genome (downloaded unless you pass `--genome`) | Gene annotation (downloaded unless you pass `--gtf`) | TE library |
 |-------------|--------|-----------------|----------------------------|
-| `mouse` | GRCm38 / mm10 primary assembly, GENCODE M25 | GENCODE M25 primary assembly | `mousub.ref` + `rodrep.ref` (we used RepBase 25.05) |
-| `human` | GRCh38 / hg38 primary assembly, GENCODE v40 | GENCODE v40 basic | `humrep.ref` + `humsub.ref` (we used RepBase 28.04) |
-| `custom` | your `--genome` (required) | your `--gtf` (required) | any TE consensus FASTA (`--te-fasta`), or RepBase files of your choice (`--repbase` + `--te-libs`) |
+| `mouse` | GRCm38 / mm10 primary assembly, GENCODE M25 | GENCODE M25 primary assembly | `--dfam`: Dfam 4.0 curated (1,362 families), or `--repbase`: `mousub.ref` + `rodrep.ref` (we used RepBase 25.05) |
+| `human` | GRCh38 / hg38 primary assembly, GENCODE v40 | GENCODE v40 basic | `--dfam`: Dfam 4.0 curated (1,403 families), or `--repbase`: `humrep.ref` + `humsub.ref` (we used RepBase 28.04) |
+| `custom` | your `--genome` (required) | your `--gtf` (required) | a bundled [Dfam library](te_libraries/dfam/) (zebrafish, fly, worm, Arabidopsis) or any TE consensus FASTA (`--te-fasta`), or RepBase files of your choice (`--repbase` + `--te-libs`) |
+
+### Ready-to-use TE libraries (Dfam 4.0, open access, CC0)
+
+[`te_libraries/dfam/`](te_libraries/dfam/) contains consensus libraries plus a
+per-TE annotation table (class, subclass, clade) for **mouse, human,
+zebrafish, fly, worm** (curated) and **Arabidopsis** (uncurated, de novo).
+`scripts/te_libraries/fetch_dfam.py` downloads the same for any other species
+in Dfam.
 
 ---
 
@@ -148,8 +191,12 @@ kallisto-TE/
 │   │   ├── make_te_pseudo_gtf.sh      # one "gene" per TE consensus
 │   │   ├── extract_repbase_species.sh # pull a species' TEs out of RepBase by name
 │   │   └── check_index.sh             # verify every TE made it into the index
+│   ├── te_libraries/
+│   │   └── fetch_dfam.py              # download a species' TE library from Dfam (any species)
 │   └── optional/
 │       └── repeatmasker_genome.sbatch # locus-level TE annotation with the same library
+├── te_libraries/
+│   └── dfam/                          # ready-to-use Dfam 4.0 libraries + annotation tables
 ├── slurm/                             # example SLURM jobs (edit paths and partition)
 │   ├── build_index_mouse_mm10.sbatch
 │   ├── build_index_human_hg38.sbatch
@@ -169,10 +216,10 @@ Each script prints its own help with `-h`, e.g.
 * [conda](https://docs.conda.io/) / [mamba](https://mamba.readthedocs.io/)
 * [`kb-python`](https://github.com/pachterlab/kb_python) 0.30.2 (installed by
   the environment file; bundles kallisto and bustools)
-* A TE consensus library: [RepBase](https://www.girinst.org/repbase/) (free
-  academic registration; files cannot be redistributed), or
-  [Dfam](https://www.dfam.org/), or a de novo library
-  (EDTA / RepeatModeler2)
+* A TE consensus library: the bundled [Dfam libraries](te_libraries/dfam/)
+  (open access, nothing to download), [RepBase](https://www.girinst.org/repbase/)
+  (free academic registration; files cannot be redistributed), or a de novo
+  library (EDTA / RepeatModeler2)
 * For mammals: ~64 GB RAM and ~100 GB disk while building the index
 
 Already have kb-python? These also work:
@@ -202,6 +249,9 @@ approach and the tools it relies on:
   RNA-seq preprocessing. *Nat Biotechnol* 39, 813–818 (2021). (kallisto | bustools)
 * Bao W, Kojima KK, Kohany O. Repbase Update, a database of repetitive
   elements in eukaryotic genomes. *Mob DNA* 6, 11 (2015). (if you use RepBase)
+* Storer J, *et al.* The Dfam community resource of transposable element
+  families, sequence models, and genome annotations. *Mob DNA* 12, 2 (2021).
+  (if you use the Dfam libraries)
 
 ## License
 

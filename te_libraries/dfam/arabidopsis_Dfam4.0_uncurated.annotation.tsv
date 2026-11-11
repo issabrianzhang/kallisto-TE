@@ -1,0 +1,504 @@
+te_id	dfam_accession	dfam_version	name	repeat_type	repeat_subtype	classification	clades	length	curated
+DR003462015_LTR-Gypsy	DR003462015	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	266	no
+DR003462016_LTR-Copia	DR003462016	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	185	no
+DR003462017_LTR-Copia	DR003462017	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	308	no
+DR003462018_LTR-Copia	DR003462018	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	340	no
+DR003462019_LTR-Copia	DR003462019	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	396	no
+DR003462020_LTR-Copia	DR003462020	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	121	no
+DR003462021_LTR-Copia	DR003462021	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	167	no
+DR003462022_LTR-Gypsy	DR003462022	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	804	no
+DR003462023_LTR-Gypsy	DR003462023	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	384	no
+DR003462024_LTR-Copia	DR003462024	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	157	no
+DR003462025_LTR-Copia	DR003462025	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	299	no
+DR003462026_LTR-Copia	DR003462026	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	337	no
+DR003462027_LTR-Gypsy	DR003462027	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1476	no
+DR003462028_LTR-Copia	DR003462028	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	587	no
+DR003462029_LTR-Copia	DR003462029	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	1792	no
+DR003462030_LTR-Gypsy	DR003462030	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	519	no
+DR003462031_RC-Helitron	DR003462031	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	416	no
+DR003462032_Unknown	DR003462032	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	405	no
+DR003462033_LTR-Copia	DR003462033	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4299	no
+DR003462034_Satellite	DR003462034	2		Satellite		root;Tandem_Repeat;Satellite	Arabidopsis thaliana	396	no
+DR003462035_LTR-Gypsy	DR003462035	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4592	no
+DR003462036_LTR-Copia	DR003462036	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4474	no
+DR003462037_DNA-MULE-MuDR	DR003462037	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	220	no
+DR003462038_LTR-Copia	DR003462038	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4957	no
+DR003462039_LTR-Copia	DR003462039	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4072	no
+DR003462040_LTR-Gypsy	DR003462040	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4867	no
+DR003462041_Unknown	DR003462041	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	307	no
+DR003462042_Unknown	DR003462042	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	343	no
+DR003462043_LTR-Copia	DR003462043	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	5139	no
+DR003462044_LTR-Gypsy	DR003462044	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	6333	no
+DR003462045_LTR-Gypsy	DR003462045	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1880	no
+DR003462046_LTR-Gypsy	DR003462046	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	350	no
+DR003462047_LTR-Copia	DR003462047	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	6329	no
+DR003462048_Unknown	DR003462048	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	64	no
+DR003462049_Unknown	DR003462049	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	120	no
+DR003462050_DNA-hAT-Ac	DR003462050	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	1534	no
+DR003462051_Unknown	DR003462051	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	780	no
+DR003462052_SINE-tRNA	DR003462052	2		SINE	tRNA	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;Unknown_LINE-dependent	Arabidopsis thaliana	324	no
+DR003462053_RC-Helitron	DR003462053	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	874	no
+DR003462054_RC-Helitron	DR003462054	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	579	no
+DR003462055_DNA-CMC-EnSpm	DR003462055	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	158	no
+DR003462056_Unknown	DR003462056	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	887	no
+DR003462057_DNA-PIF-Harbinger	DR003462057	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	113	no
+DR003462058_Satellite	DR003462058	2		Satellite		root;Tandem_Repeat;Satellite	Arabidopsis thaliana	79	no
+DR003462059_SINE-tRNA	DR003462059	2		SINE	tRNA	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;Unknown_LINE-dependent	Arabidopsis thaliana	167	no
+DR003462060_Unknown	DR003462060	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	883	no
+DR003462061_DNA-PIF-Harbinger	DR003462061	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	246	no
+DR003462062_LINE-L1	DR003462062	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	657	no
+DR003462063_LTR-Gypsy	DR003462063	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	515	no
+DR003462064_LTR-Gypsy	DR003462064	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	743	no
+DR003462065_DNA-TcMar-Pogo	DR003462065	2		DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Arabidopsis thaliana	712	no
+DR003462066_LTR-Copia	DR003462066	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	9467	no
+DR003462067_Unknown	DR003462067	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	199	no
+DR003462068_LTR-Gypsy	DR003462068	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3191	no
+DR003462069_RC-Helitron	DR003462069	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	374	no
+DR003462070_LTR-Gypsy	DR003462070	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2769	no
+DR003462071_LTR-Cassandra	DR003462071	2		LTR	Cassandra	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Retroviridae	Arabidopsis thaliana	1039	no
+DR003462072_LTR-Copia	DR003462072	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	1019	no
+DR003462073_DNA	DR003462073	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	112	no
+DR003462074_LINE-L1	DR003462074	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	214	no
+DR003462075_DNA	DR003462075	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	451	no
+DR003462076_LTR-Copia	DR003462076	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	273	no
+DR003462077_RC-Helitron	DR003462077	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	159	no
+DR003462078_Unknown	DR003462078	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	81	no
+DR003462079_LTR-Gypsy	DR003462079	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2113	no
+DR003462080_LTR-Copia	DR003462080	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	65	no
+DR003462081_Unknown	DR003462081	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	224	no
+DR003462082_DNA-MULE-MuDR	DR003462082	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	862	no
+DR003462083_RC-Helitron	DR003462083	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	196	no
+DR003462084_DNA-MULE-MuDR	DR003462084	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	215	no
+DR003462085_RC-Helitron	DR003462085	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1841	no
+DR003462086_LTR-Gypsy	DR003462086	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	780	no
+DR003462087_Unknown	DR003462087	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	130	no
+DR003462088_LINE-L1	DR003462088	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1203	no
+DR003462089_DNA-MULE-MuDR	DR003462089	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	3194	no
+DR003462090_LINE-L1	DR003462090	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	987	no
+DR003462091_Unknown	DR003462091	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	919	no
+DR003462092_LTR-Gypsy	DR003462092	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3762	no
+DR003462093_RC-Helitron	DR003462093	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	821	no
+DR003462094_DNA-MULE-MuDR	DR003462094	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	871	no
+DR003462095_DNA-MULE-MuDR	DR003462095	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	311	no
+DR003462096_Unknown	DR003462096	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	888	no
+DR003462097_LTR-Gypsy	DR003462097	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1617	no
+DR003462098_LTR-Gypsy	DR003462098	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	7313	no
+DR003462099_LINE-L1	DR003462099	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	144	no
+DR003462100_Unknown	DR003462100	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	151	no
+DR003462101_Unknown	DR003462101	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	525	no
+DR003462102_LTR-Copia	DR003462102	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	185	no
+DR003462103_Unknown	DR003462103	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	57	no
+DR003462104_DNA-CMC-EnSpm	DR003462104	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	3097	no
+DR003462105_LTR-Copia	DR003462105	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	519	no
+DR003462106_DNA-CMC-EnSpm	DR003462106	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	2687	no
+DR003462107_LTR-Copia	DR003462107	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	233	no
+DR003462108_SINE-tRNA	DR003462108	2		SINE	tRNA	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;Unknown_LINE-dependent	Arabidopsis thaliana	107	no
+DR003462109_LTR-Gypsy	DR003462109	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4475	no
+DR003462110_DNA-CMC-EnSpm	DR003462110	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	494	no
+DR003462111_Unknown	DR003462111	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	137	no
+DR003462112_LTR-Copia	DR003462112	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	781	no
+DR003462113_RC-Helitron	DR003462113	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	2103	no
+DR003462114_DNA-CMC-EnSpm	DR003462114	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	1310	no
+DR003462115_Unknown	DR003462115	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	398	no
+DR003462116_DNA-hAT-Charlie	DR003462116	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	685	no
+DR003462117_Unknown	DR003462117	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	789	no
+DR003462118_DNA-MULE-MuDR	DR003462118	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	124	no
+DR003462119_RC-Helitron	DR003462119	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	145	no
+DR003462120_LTR-Gypsy	DR003462120	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	5041	no
+DR003462121_Unknown	DR003462121	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	150	no
+DR003462122_DNA-CMC-EnSpm	DR003462122	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	662	no
+DR003462123_RC-Helitron	DR003462123	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	6837	no
+DR003462124_LTR-Gypsy	DR003462124	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2036	no
+DR003462125_LTR-Gypsy	DR003462125	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2836	no
+DR003462126_Unknown	DR003462126	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	359	no
+DR003462127_DNA	DR003462127	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	665	no
+DR003462128_Unknown	DR003462128	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	106	no
+DR003462129_Unknown	DR003462129	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	269	no
+DR003462130_RC-Helitron	DR003462130	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1587	no
+DR003462131_RC-Helitron	DR003462131	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	881	no
+DR003462132_DNA-MULE-MuDR	DR003462132	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1268	no
+DR003462133_DNA-MULE-MuDR	DR003462133	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	140	no
+DR003462134_LTR-Gypsy	DR003462134	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2689	no
+DR003462135_RC-Helitron	DR003462135	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	580	no
+DR003462136_DNA-CMC-EnSpm	DR003462136	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	958	no
+DR003462137_DNA-MULE-MuDR	DR003462137	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	2573	no
+DR003462138_LTR-Gypsy	DR003462138	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2828	no
+DR003462139_Unknown	DR003462139	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	239	no
+DR003462140_SINE-tRNA	DR003462140	2		SINE	tRNA	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;Unknown_LINE-dependent	Arabidopsis thaliana	217	no
+DR003462141_DNA-CMC-EnSpm	DR003462141	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	404	no
+DR003462142_DNA-CMC-EnSpm	DR003462142	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	669	no
+DR003462143_RC-Helitron	DR003462143	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	568	no
+DR003462144_LTR-Gypsy	DR003462144	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2615	no
+DR003462145_DNA-hAT-Ac	DR003462145	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	663	no
+DR003462146_Unknown	DR003462146	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	235	no
+DR003462147_LTR-Gypsy	DR003462147	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1045	no
+DR003462148_Unknown	DR003462148	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	82	no
+DR003462149_LTR-Gypsy	DR003462149	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2517	no
+DR003462150_DNA-hAT-Ac	DR003462150	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	105	no
+DR003462151_LTR-Gypsy	DR003462151	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	206	no
+DR003462152_DNA-CMC-EnSpm	DR003462152	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	318	no
+DR003462153_DNA-MULE-MuDR	DR003462153	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1089	no
+DR003462154_Unknown	DR003462154	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	136	no
+DR003462155_LINE-L1	DR003462155	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	207	no
+DR003462156_DNA-PIF-Harbinger	DR003462156	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	166	no
+DR003462157_LTR-Gypsy	DR003462157	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1017	no
+DR003462158_tRNA	DR003462158	2		tRNA		root;Interspersed_Repeat;Pseudogene;RNA;tRNA	Arabidopsis thaliana	89	no
+DR003462159_Unknown	DR003462159	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	200	no
+DR003462160_DNA-MULE-MuDR	DR003462160	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	307	no
+DR003462161_LINE-L1	DR003462161	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	115	no
+DR003462162_Unknown	DR003462162	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	154	no
+DR003462163_LINE	DR003462163	2		LINE		root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE	Arabidopsis thaliana	150	no
+DR003462164_Unknown	DR003462164	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1526	no
+DR003462165_DNA	DR003462165	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	104	no
+DR003462166_DNA-MULE-MuDR	DR003462166	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1503	no
+DR003462167_DNA-MULE-MuDR	DR003462167	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	178	no
+DR003462168_RC-Helitron	DR003462168	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	273	no
+DR003462169_Unknown	DR003462169	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	64	no
+DR003462170_LINE-L1	DR003462170	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	273	no
+DR003462171_Unknown	DR003462171	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	107	no
+DR003462172_DNA-MULE-MuDR	DR003462172	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1013	no
+DR003462173_LTR-Gypsy	DR003462173	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4483	no
+DR003462174_DNA-MULE-MuDR	DR003462174	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	244	no
+DR003462175_DNA-MULE-MuDR	DR003462175	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	248	no
+DR003462176_Unknown	DR003462176	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	128	no
+DR003462177_LINE-L1	DR003462177	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	339	no
+DR003462178_DNA	DR003462178	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	405	no
+DR003462179_LTR-Copia	DR003462179	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	545	no
+DR003462180_Unknown	DR003462180	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	620	no
+DR003462181_Unknown	DR003462181	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	147	no
+DR003462182_DNA-MULE-MuDR	DR003462182	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	136	no
+DR003462183_Unknown	DR003462183	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	592	no
+DR003462184_LTR-Gypsy	DR003462184	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3062	no
+DR003462185_LTR-Gypsy	DR003462185	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2028	no
+DR003462186_DNA-hAT-Tag1	DR003462186	2		DNA	hAT-Tag1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tag1	Arabidopsis thaliana	158	no
+DR003462187_DNA-CMC-EnSpm	DR003462187	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	668	no
+DR003462188_LTR-Gypsy	DR003462188	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	894	no
+DR003462189_DNA-MULE-MuDR	DR003462189	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	2426	no
+DR003462190_Unknown	DR003462190	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	224	no
+DR003462191_RC-Helitron	DR003462191	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	6796	no
+DR003462192_tRNA	DR003462192	2		tRNA		root;Interspersed_Repeat;Pseudogene;RNA;tRNA	Arabidopsis thaliana	93	no
+DR003462193_LTR-Gypsy	DR003462193	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	118	no
+DR003462194_LTR-Gypsy	DR003462194	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	389	no
+DR003462195_Unknown	DR003462195	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	513	no
+DR003462196_DNA-hAT-Tag1	DR003462196	2		DNA	hAT-Tag1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tag1	Arabidopsis thaliana	488	no
+DR003462197_LTR-Gypsy	DR003462197	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	428	no
+DR003462198_Unknown	DR003462198	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	824	no
+DR003462199_DNA-hAT-Ac	DR003462199	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	138	no
+DR003462200_Unknown	DR003462200	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	7987	no
+DR003462201_DNA-TcMar-Pogo	DR003462201	2		DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Arabidopsis thaliana	543	no
+DR003462202_DNA-CMC-EnSpm	DR003462202	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	434	no
+DR003462203_LINE-L1	DR003462203	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1097	no
+DR003462204_LTR-Gypsy	DR003462204	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2060	no
+DR003462205_Unknown	DR003462205	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	731	no
+DR003462206_LTR-Pao	DR003462206	2		LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Arabidopsis thaliana	1150	no
+DR003462207_LTR-Gypsy	DR003462207	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	527	no
+DR003462208_LTR-Gypsy	DR003462208	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3572	no
+DR003462209_RC-Helitron	DR003462209	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	513	no
+DR003462210_LTR-Gypsy	DR003462210	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	843	no
+DR003462211_DNA	DR003462211	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	498	no
+DR003462212_RC-Helitron	DR003462212	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	426	no
+DR003462213_LTR-Gypsy	DR003462213	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3590	no
+DR003462214_LTR-Gypsy	DR003462214	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	519	no
+DR003462215_LTR-Gypsy	DR003462215	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1108	no
+DR003462216_DNA-MULE-MuDR	DR003462216	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	10395	no
+DR003462217_Unknown	DR003462217	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	120	no
+DR003462218_DNA	DR003462218	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	642	no
+DR003462219_LTR-Gypsy	DR003462219	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	592	no
+DR003462220_Unknown	DR003462220	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	81	no
+DR003462221_Unknown	DR003462221	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1208	no
+DR003462222_DNA-CMC-EnSpm	DR003462222	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	500	no
+DR003462223_LINE-L1	DR003462223	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	118	no
+DR003462224_Unknown	DR003462224	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	387	no
+DR003462225_RC-Helitron	DR003462225	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	848	no
+DR003462226_LTR-Gypsy	DR003462226	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1116	no
+DR003462227_DNA-MULE-MuDR	DR003462227	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1365	no
+DR003462228_LTR-Gypsy	DR003462228	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4965	no
+DR003462229_DNA	DR003462229	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	268	no
+DR003462230_DNA-MULE-MuDR	DR003462230	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	227	no
+DR003462231_LTR-Gypsy	DR003462231	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1315	no
+DR003462232_LTR-Cassandra	DR003462232	2		LTR	Cassandra	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Retroviridae	Arabidopsis thaliana	359	no
+DR003462233_RC-Helitron	DR003462233	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	282	no
+DR003462234_DNA-MULE-MuDR	DR003462234	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1108	no
+DR003462235_LTR-Gypsy	DR003462235	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3487	no
+DR003462236_RC-Helitron	DR003462236	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	5606	no
+DR003462237_DNA-TcMar-Stowaway	DR003462237	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	251	no
+DR003462238_DNA-MULE-MuDR	DR003462238	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1349	no
+DR003462239_DNA-MULE-MuDR	DR003462239	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	5061	no
+DR003462240_RC-Helitron	DR003462240	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	385	no
+DR003462241_Unknown	DR003462241	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	200	no
+DR003462242_DNA-TcMar-Stowaway	DR003462242	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	271	no
+DR003462243_LINE-L1	DR003462243	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	411	no
+DR003462244_DNA-MULE-MuDR	DR003462244	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	106	no
+DR003462245_DNA-MULE-MuDR	DR003462245	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	2876	no
+DR003462246_LTR-Gypsy	DR003462246	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1161	no
+DR003462247_LTR-Gypsy	DR003462247	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	10587	no
+DR003462248_LTR-Copia	DR003462248	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	200	no
+DR003462249_RC-Helitron	DR003462249	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	606	no
+DR003462250_LINE-L1	DR003462250	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	478	no
+DR003462251_RC-Helitron	DR003462251	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1301	no
+DR003462252_DNA-MULE-MuDR	DR003462252	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	475	no
+DR003462253_RC-Helitron	DR003462253	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	945	no
+DR003462254_DNA-MULE-MuDR	DR003462254	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	15893	no
+DR003462255_Unknown	DR003462255	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	459	no
+DR003462256_Unknown	DR003462256	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	181	no
+DR003462257_DNA-MULE-MuDR	DR003462257	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	5263	no
+DR003462258_LTR-Gypsy	DR003462258	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1730	no
+DR003462259_DNA-hAT-Ac	DR003462259	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	152	no
+DR003462260_RC-Helitron	DR003462260	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	464	no
+DR003462261_DNA-CMC-EnSpm	DR003462261	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	3931	no
+DR003462262_DNA-MULE-MuDR	DR003462262	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	248	no
+DR003462263_DNA-MULE-MuDR	DR003462263	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	127	no
+DR003462264_LINE-CR1	DR003462264	2		LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Arabidopsis thaliana	141	no
+DR003462265_LTR-Gypsy	DR003462265	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3754	no
+DR003462266_DNA-hAT-Ac	DR003462266	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	63	no
+DR003462267_LTR-Copia	DR003462267	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	494	no
+DR003462268_SINE-tRNA	DR003462268	2		SINE	tRNA	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;Unknown_LINE-dependent	Arabidopsis thaliana	5576	no
+DR003462269_LTR-Gypsy	DR003462269	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3132	no
+DR003462270_RC-Helitron	DR003462270	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	348	no
+DR003462271_LTR-Copia	DR003462271	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	249	no
+DR003462272_DNA-MULE-MuDR	DR003462272	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	303	no
+DR003462273_DNA-CMC-EnSpm	DR003462273	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	154	no
+DR003462274_LTR-Gypsy	DR003462274	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2757	no
+DR003462275_RC-Helitron	DR003462275	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	2389	no
+DR003462276_DNA-MULE-MuDR	DR003462276	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	340	no
+DR003462277_LTR-Gypsy	DR003462277	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	417	no
+DR003462278_LTR-Gypsy	DR003462278	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	5279	no
+DR003462279_RC-Helitron	DR003462279	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1081	no
+DR003462280_LTR-Copia	DR003462280	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	874	no
+DR003462281_DNA-CMC-EnSpm	DR003462281	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	2082	no
+DR003462282_LTR-Gypsy	DR003462282	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	201	no
+DR003462283_Unknown	DR003462283	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	52	no
+DR003462284_DNA-MULE-MuDR	DR003462284	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	134	no
+DR003462285_DNA	DR003462285	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	497	no
+DR003462286_RC-Helitron	DR003462286	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	277	no
+DR003462287_Unknown	DR003462287	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	119	no
+DR003462288_tRNA	DR003462288	2		tRNA		root;Interspersed_Repeat;Pseudogene;RNA;tRNA	Arabidopsis thaliana	100	no
+DR003462289_DNA-PIF-Harbinger	DR003462289	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	759	no
+DR003462290_LTR-Gypsy	DR003462290	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	7633	no
+DR003462291_LINE-L1	DR003462291	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	697	no
+DR003462292_DNA	DR003462292	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	350	no
+DR003462293_DNA-MULE-MuDR	DR003462293	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	3670	no
+DR003462294_DNA	DR003462294	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	490	no
+DR003462295_Unknown	DR003462295	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	815	no
+DR003462296_DNA-TcMar-Pogo	DR003462296	2		DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Arabidopsis thaliana	546	no
+DR003462297_DNA-MULE-MuDR	DR003462297	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	10321	no
+DR003462298_LINE-L1	DR003462298	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1109	no
+DR003462299_DNA-TcMar-Stowaway	DR003462299	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	265	no
+DR003462300_LTR-Gypsy	DR003462300	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1825	no
+DR003462301_DNA-hAT-Ac	DR003462301	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	607	no
+DR003462302_RC-Helitron	DR003462302	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	2102	no
+DR003462303_DNA-PIF-Harbinger	DR003462303	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	841	no
+DR003462304_DNA-MULE-MuDR	DR003462304	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1287	no
+DR003462305_LINE-L1	DR003462305	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	124	no
+DR003462306_Unknown	DR003462306	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	256	no
+DR003462307_LTR-Gypsy	DR003462307	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1814	no
+DR003462308_DNA	DR003462308	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	413	no
+DR003462309_Unknown	DR003462309	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	586	no
+DR003462310_LTR-Copia	DR003462310	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	1067	no
+DR003462311_RC-Helitron	DR003462311	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	829	no
+DR003462312_Unknown	DR003462312	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1055	no
+DR003462313_LTR-Gypsy	DR003462313	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3306	no
+DR003462314_LTR-Gypsy	DR003462314	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	5140	no
+DR003462315_DNA-hAT-Charlie	DR003462315	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	851	no
+DR003462316_Unknown	DR003462316	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	588	no
+DR003462317_DNA-MULE-MuDR	DR003462317	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	228	no
+DR003462318_Satellite	DR003462318	2		Satellite		root;Tandem_Repeat;Satellite	Arabidopsis thaliana	140	no
+DR003462319_LTR-Gypsy	DR003462319	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	516	no
+DR003462320_Retroposon-L1-dep	DR003462320	2		Retroposon	L1-dep	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;Lacking_Small_RNA_pol_III_Promoter;L1-dependent	Arabidopsis thaliana	1176	no
+DR003462321_RC-Helitron	DR003462321	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	764	no
+DR003462322_DNA-hAT-Charlie	DR003462322	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	783	no
+DR003462323_RC-Helitron	DR003462323	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	793	no
+DR003462324_LTR-Gypsy	DR003462324	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	6753	no
+DR003462325_LTR-Gypsy	DR003462325	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	5776	no
+DR003462326_DNA-PIF-Harbinger	DR003462326	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	259	no
+DR003462327_LTR-Copia	DR003462327	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	2768	no
+DR003462328_LINE	DR003462328	2		LINE		root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE	Arabidopsis thaliana	958	no
+DR003462329_DNA-CMC-EnSpm	DR003462329	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	3485	no
+DR003462330_DNA-hAT-Tag1	DR003462330	2		DNA	hAT-Tag1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tag1	Arabidopsis thaliana	739	no
+DR003462331_DNA-hAT-Ac	DR003462331	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	4110	no
+DR003462332_RC-Helitron	DR003462332	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	322	no
+DR003462333_LINE-L1	DR003462333	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	2079	no
+DR003462334_Unknown	DR003462334	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	299	no
+DR003462335_DNA-hAT-Charlie	DR003462335	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	1209	no
+DR003462336_LTR-Gypsy	DR003462336	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	7706	no
+DR003462337_DNA-hAT-Tag1	DR003462337	2		DNA	hAT-Tag1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tag1	Arabidopsis thaliana	509	no
+DR003462338_LINE-L1	DR003462338	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1186	no
+DR003462339_Unknown	DR003462339	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1082	no
+DR003462340_RC-Helitron	DR003462340	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	743	no
+DR003462341_LINE-L1	DR003462341	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1790	no
+DR003462342_RC-Helitron	DR003462342	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	4959	no
+DR003462343_Unknown	DR003462343	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	605	no
+DR003462344_LINE-L1	DR003462344	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1675	no
+DR003462345_LTR-Copia	DR003462345	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	2546	no
+DR003462346_Unknown	DR003462346	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1952	no
+DR003462347_Unknown	DR003462347	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	192	no
+DR003462348_LTR-Gypsy	DR003462348	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	5840	no
+DR003462349_LTR-Gypsy	DR003462349	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2132	no
+DR003462350_LTR-Gypsy	DR003462350	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4452	no
+DR003462351_RC-Helitron	DR003462351	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	3021	no
+DR003462352_Unknown	DR003462352	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	210	no
+DR003462353_Unknown	DR003462353	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1293	no
+DR003462354_LINE-I-Jockey	DR003462354	2		LINE	I-Jockey	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;R1-group;I-group;Jockey	Arabidopsis thaliana	3435	no
+DR003462355_Unknown	DR003462355	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	259	no
+DR003462356_LTR-Gypsy	DR003462356	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3180	no
+DR003462357_Unknown	DR003462357	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1178	no
+DR003462358_LINE-I-Jockey	DR003462358	2		LINE	I-Jockey	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;R1-group;I-group;Jockey	Arabidopsis thaliana	2436	no
+DR003462359_Unknown	DR003462359	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	2827	no
+DR003462360_Unknown	DR003462360	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1567	no
+DR003462361_Unknown	DR003462361	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1358	no
+DR003462362_DNA-MULE-MuDR	DR003462362	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1854	no
+DR003462363_DNA-PIF-Harbinger	DR003462363	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	500	no
+DR003462364_DNA-hAT-Charlie	DR003462364	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	782	no
+DR003462365_Retroposon	DR003462365	2		Retroposon		root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;Lacking_Small_RNA_pol_III_Promoter	Arabidopsis thaliana	893	no
+DR003462366_LTR-Gypsy	DR003462366	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	4311	no
+DR003462367_LTR-Copia	DR003462367	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4505	no
+DR003462368_Unknown	DR003462368	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	345	no
+DR003462369_LINE-L1	DR003462369	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	911	no
+DR003462370_DNA-MULE-MuDR	DR003462370	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	4769	no
+DR003462371_Satellite	DR003462371	2		Satellite		root;Tandem_Repeat;Satellite	Arabidopsis thaliana	1628	no
+DR003462372_LINE-L1	DR003462372	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1537	no
+DR003462373_DNA-hAT-Tip100	DR003462373	2		DNA	hAT-Tip100	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tip100	Arabidopsis thaliana	3263	no
+DR003462374_DNA-PIF-Harbinger	DR003462374	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	494	no
+DR003462375_LTR-Gypsy	DR003462375	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	5377	no
+DR003462376_LINE-L1	DR003462376	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	131	no
+DR003462377_RC-Helitron	DR003462377	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1764	no
+DR003462378_DNA-hAT-Tip100	DR003462378	2		DNA	hAT-Tip100	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tip100	Arabidopsis thaliana	2615	no
+DR003462379_LINE-L1	DR003462379	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	3181	no
+DR003462380_DNA-CMC-EnSpm	DR003462380	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	9100	no
+DR003462381_DNA-PIF-Harbinger	DR003462381	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	1204	no
+DR003462382_DNA-hAT-Charlie	DR003462382	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	956	no
+DR003462383_Satellite	DR003462383	2		Satellite		root;Tandem_Repeat;Satellite	Arabidopsis thaliana	1527	no
+DR003462384_Unknown	DR003462384	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	269	no
+DR003462385_RC-Helitron	DR003462385	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1915	no
+DR003462386_Unknown	DR003462386	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	568	no
+DR003462387_Unknown	DR003462387	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	236	no
+DR003462388_LTR-Gypsy	DR003462388	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	414	no
+DR003462389_RC-Helitron	DR003462389	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1705	no
+DR003462390_Unknown	DR003462390	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	829	no
+DR003462391_Unknown	DR003462391	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1385	no
+DR003462392_RC-Helitron	DR003462392	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	2025	no
+DR003462393_DNA-PIF-Harbinger	DR003462393	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	2847	no
+DR003462394_DNA-PIF-Harbinger	DR003462394	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	454	no
+DR003462395_LINE-L1	DR003462395	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	3163	no
+DR003462396_DNA-hAT-Ac	DR003462396	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	862	no
+DR003462397_Unknown	DR003462397	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1541	no
+DR003462398_Unknown	DR003462398	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	555	no
+DR003462399_Unknown	DR003462399	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	84	no
+DR003462400_DNA-MULE-MuDR	DR003462400	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	5149	no
+DR003462401_DNA	DR003462401	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	940	no
+DR003462402_LINE-L1	DR003462402	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1861	no
+DR003462403_LTR-Copia	DR003462403	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4512	no
+DR003462404_LINE-L1	DR003462404	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	2673	no
+DR003462405_LTR-Cassandra	DR003462405	2		LTR	Cassandra	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Retroviridae	Arabidopsis thaliana	824	no
+DR003462406_DNA-CMC-EnSpm	DR003462406	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	4000	no
+DR003462407_DNA-CMC-EnSpm	DR003462407	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	5054	no
+DR003462408_Unknown	DR003462408	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	534	no
+DR003462409_Unknown	DR003462409	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	402	no
+DR003462410_SINE-tRNA	DR003462410	2		SINE	tRNA	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;Unknown_LINE-dependent	Arabidopsis thaliana	162	no
+DR003462411_LTR-Copia	DR003462411	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4371	no
+DR003462412_DNA-TcMar-Pogo	DR003462412	2		DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Arabidopsis thaliana	634	no
+DR003462413_RC-Helitron	DR003462413	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	5753	no
+DR003462414_DNA-MULE-MuDR	DR003462414	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	734	no
+DR003462415_RC-Helitron	DR003462415	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	553	no
+DR003462416_DNA-hAT-Tip100	DR003462416	2		DNA	hAT-Tip100	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tip100	Arabidopsis thaliana	646	no
+DR003462417_DNA-hAT-Ac	DR003462417	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	1111	no
+DR003462418_RC-Helitron	DR003462418	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1003	no
+DR003462419_LTR-Copia	DR003462419	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	216	no
+DR003462420_DNA-MULE-MuDR	DR003462420	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1224	no
+DR003462421_DNA-MULE-MuDR	DR003462421	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1224	no
+DR003462422_DNA-MULE-MuDR	DR003462422	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1262	no
+DR003462423_RC-Helitron	DR003462423	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	2565	no
+DR003462424_DNA-hAT-Ac	DR003462424	2		DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Arabidopsis thaliana	507	no
+DR003462425_DNA-MULE-MuDR	DR003462425	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1151	no
+DR003462426_Unknown	DR003462426	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1313	no
+DR003462427_Unknown	DR003462427	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1885	no
+DR003462428_DNA-MULE-MuDR	DR003462428	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	5009	no
+DR003462429_RC-Helitron	DR003462429	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1087	no
+DR003462430_DNA-TcMar-Stowaway	DR003462430	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	213	no
+DR003462431_Unknown	DR003462431	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	2067	no
+DR003462432_RC-Helitron	DR003462432	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1912	no
+DR003462433_LTR-Copia	DR003462433	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	749	no
+DR003462434_LTR-Gypsy	DR003462434	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1897	no
+DR003462435_DNA-TcMar-Pogo	DR003462435	2		DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Arabidopsis thaliana	623	no
+DR003462436_Satellite	DR003462436	2		Satellite		root;Tandem_Repeat;Satellite	Arabidopsis thaliana	1703	no
+DR003462437_Unknown	DR003462437	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	3700	no
+DR003462438_Unknown	DR003462438	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	997	no
+DR003462439_LTR-Copia	DR003462439	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	2108	no
+DR003462440_Unknown	DR003462440	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	178	no
+DR003462441_DNA-MULE-MuDR	DR003462441	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	10983	no
+DR003462442_LINE-L1	DR003462442	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1716	no
+DR003462443_LTR-Copia	DR003462443	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	3113	no
+DR003462444_LTR-Gypsy	DR003462444	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3307	no
+DR003462445_DNA	DR003462445	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	913	no
+DR003462446_DNA-PIF-Harbinger	DR003462446	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	4004	no
+DR003462447_LTR-Gypsy	DR003462447	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2875	no
+DR003462448_DNA-PIF-Harbinger	DR003462448	2		DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Arabidopsis thaliana	4477	no
+DR003462449_DNA-hAT-Charlie	DR003462449	2		DNA	hAT-Charlie	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Charlie	Arabidopsis thaliana	1199	no
+DR003462450_DNA-TcMar-Stowaway	DR003462450	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	320	no
+DR003462451_Unknown	DR003462451	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	751	no
+DR003462452_RC-Helitron	DR003462452	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	1201	no
+DR003462453_DNA-hAT-Tip100	DR003462453	2		DNA	hAT-Tip100	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Tip100	Arabidopsis thaliana	923	no
+DR003462454_Unknown	DR003462454	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	10165	no
+DR003462455_DNA-TcMar-Pogo	DR003462455	2		DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Arabidopsis thaliana	737	no
+DR003462456_Unknown	DR003462456	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	262	no
+DR003462457_DNA-CMC-EnSpm	DR003462457	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	2621	no
+DR003462458_LINE-L1	DR003462458	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	1931	no
+DR003462459_LTR-Gypsy	DR003462459	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	6088	no
+DR003462460_Unknown	DR003462460	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1052	no
+DR003462461_LTR-Gypsy	DR003462461	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	839	no
+DR003462462_LTR-Gypsy	DR003462462	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	3682	no
+DR003462463_LTR-Copia	DR003462463	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	1345	no
+DR003462464_Unknown	DR003462464	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	892	no
+DR003462465_Unknown	DR003462465	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	55	no
+DR003462466_DNA-MULE-MuDR	DR003462466	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	889	no
+DR003462467_RC-Helitron	DR003462467	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	433	no
+DR003462468_LTR-Gypsy	DR003462468	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1866	no
+DR003462469_LINE-L1	DR003462469	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	970	no
+DR003462470_DNA-MULE-MuDR	DR003462470	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	12316	no
+DR003462471_DNA	DR003462471	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	1034	no
+DR003462472_Unknown	DR003462472	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1217	no
+DR003462473_Unknown	DR003462473	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	544	no
+DR003462474_DNA-TcMar-Stowaway	DR003462474	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	336	no
+DR003462475_DNA-CMC-EnSpm	DR003462475	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	464	no
+DR003462476_LINE-L1	DR003462476	2		LINE	L1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;L1-like;L1-group;L1	Arabidopsis thaliana	903	no
+DR003462477_DNA-CMC-EnSpm	DR003462477	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	3060	no
+DR003462478_DNA-MULE-MuDR	DR003462478	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	701	no
+DR003462479_Unknown	DR003462479	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	281	no
+DR003462480_Unknown	DR003462480	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	615	no
+DR003462481_Unknown	DR003462481	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	2633	no
+DR003462482_DNA-CMC-EnSpm	DR003462482	2		DNA	CMC-EnSpm	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;EnSpm	Arabidopsis thaliana	8873	no
+DR003462483_LTR-Copia	DR003462483	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	10591	no
+DR003462484_DNA-MULE-MuDR	DR003462484	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	7733	no
+DR003462485_LTR-Copia	DR003462485	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	16485	no
+DR003462486_LTR-Gypsy	DR003462486	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	1182	no
+DR003462487_Unknown	DR003462487	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	971	no
+DR003462488_DNA-MULE-MuDR	DR003462488	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	3432	no
+DR003462489_LTR-Gypsy	DR003462489	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	10895	no
+DR003462490_LTR-Copia	DR003462490	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	3240	no
+DR003462491_Unknown	DR003462491	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1524	no
+DR003462492_DNA-MULE-MuDR	DR003462492	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	4849	no
+DR003462493_DNA	DR003462493	2		DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Arabidopsis thaliana	354	no
+DR003462494_Retroposon-L1-dep	DR003462494	2		Retroposon	L1-dep	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;Lacking_Small_RNA_pol_III_Promoter;L1-dependent	Arabidopsis thaliana	916	no
+DR003462495_Unknown	DR003462495	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	266	no
+DR003462496_Unknown	DR003462496	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	275	no
+DR003462497_DNA-TcMar-Stowaway	DR003462497	2		DNA	TcMar-Stowaway	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Stowaway	Arabidopsis thaliana	379	no
+DR003462498_DNA-MULE-MuDR	DR003462498	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	15218	no
+DR003462499_LTR-Copia	DR003462499	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	1602	no
+DR003462500_Unknown	DR003462500	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	188	no
+DR003462501_LTR-Gypsy	DR003462501	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2145	no
+DR003462502_DNA-TcMar-Mariner	DR003462502	2		DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Arabidopsis thaliana	242	no
+DR003462503_DNA-MULE-MuDR	DR003462503	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	799	no
+DR003462504_Unknown	DR003462504	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	2700	no
+DR003462505_Unknown	DR003462505	2		Unknown		root;Interspersed_Repeat;Unknown	Arabidopsis thaliana	1352	no
+DR003462506_DNA-MULE-MuDR	DR003462506	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	1162	no
+DR003462507_LTR-Gypsy	DR003462507	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	2024	no
+DR003462508_LTR-Gypsy	DR003462508	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	9087	no
+DR003462509_LTR-Copia	DR003462509	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	4589	no
+DR003462510_RC-Helitron	DR003462510	2		RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Arabidopsis thaliana	11368	no
+DR003462511_LTR-Copia	DR003462511	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	16250	no
+DR003462512_LTR-Copia	DR003462512	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	11739	no
+DR003462513_LTR-Copia	DR003462513	2		LTR	Copia	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Ty1-Copia	Arabidopsis thaliana	5454	no
+DR003462514_DNA-MULE-MuDR	DR003462514	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	14845	no
+DR003462515_DNA-MULE-MuDR	DR003462515	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	9473	no
+DR003462516_LTR-Gypsy	DR003462516	2		LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Arabidopsis thaliana	14089	no
+DR003462517_DNA-MULE-MuDR	DR003462517	2		DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Arabidopsis thaliana	15728	no
