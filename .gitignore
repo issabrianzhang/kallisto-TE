@@ -1,0 +1,23 @@
+# Outputs of the toy test
+test/toy_out/
+
+# Large reference / index files: never commit these
+*.fa
+*.fa.gz
+*.fasta
+*.fasta.gz
+*.fai
+*.gtf
+*.gtf.gz
+*.idx
+*.ref
+RepBase*.tar.gz
+tmp_kb_*/
+
+# SLURM logs
+logs/
+slurm-*.out
+
+# OS / editor
+.DS_Store
+*.swp
