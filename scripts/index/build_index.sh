@@ -128,6 +128,16 @@ fi
 [[ "$DLIST" == "none" || "$DLIST" == "genome" ]] || die "--d-list must be none or genome"
 command -v kb >/dev/null 2>&1 || die "kb not found. Activate the environment first: conda activate kallisto_te"
 
+# kb-python < 0.28 has no D-list support: it would silently build an index
+# without one (and cannot read or write the kallisto >= 0.50 index format).
+KB_VERSION=$(kb --version 2>&1 | grep -io 'kb_python [0-9][0-9.]*' | head -1 | awk '{print $2}' || true)
+if [[ -z "$KB_VERSION" ]]; then
+    echo "WARNING: could not read the kb-python version (kb --version); continuing" >&2
+elif ! awk -v v="$KB_VERSION" 'BEGIN { split(v, p, "."); exit !((p[1] + 0) > 0 || (p[2] + 0) >= 28) }'; then
+    die "kb-python $KB_VERSION is too old: kallisto-TE needs kb-python >= 0.28 (tested: 0.30.2).
+       Create the environment from envs/kallisto_te.yaml, or: pip install kb-python==0.30.2"
+fi
+
 mkdir -p "$OUTDIR"/{te,reference,combined,index}
 OUTDIR="$(cd "$OUTDIR" && pwd)"
 TE_FA="$OUTDIR/te/${NAME}_TE_library.fa"
