@@ -3,6 +3,8 @@
 **Quantify transposable element (TE) expression together with canonical
 genes from bulk and single-cell RNA-seq, using kallisto | bustools.**
 
+Typical workflows ignore the TEs in downstream analysis either leaving them uncounted or unmapped.
+
 kallisto-TE adds the consensus sequence of every TE subfamily (e.g.
 `MMERVK10C`, `IAPEz-int`, `L1HS`, `AluY`) to the transcriptome as if it were an
 extra gene. A single pseudoalignment then gives you one count matrix with
