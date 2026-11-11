@@ -1,0 +1,17 @@
+# Conda environment for kallisto-TE
+#
+#   mamba env create -f envs/kallisto_te.yaml      (or: conda env create -f ...)
+#   conda activate kallisto_te
+#
+# kb-python is pinned on purpose: build the index and run `kb count` /
+# `kallisto quant` with the SAME version, because kallisto index formats change
+# between releases (an index from kb-python 0.27 cannot be read by 0.28+).
+name: kallisto_te
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python >=3.9
+  - kb-python =0.30.2   # bundles kallisto 0.51.x and bustools
+  - samtools            # optional, handy for inspecting FASTA files
+  - wget
