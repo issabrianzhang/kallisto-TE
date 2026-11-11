@@ -133,6 +133,13 @@ tar -tzf RepBase25.05.fasta.tar.gz | head
 
 ## 4. Build the index with one command
 
+**Inputs.** The script needs a genome FASTA (`--genome`), a matching gene GTF
+(`--gtf`) and a TE library (`--repbase` or `--te-fasta`). You do not supply
+a transcriptome FASTA: `kb ref` builds it from the genome + GTF. With the
+`mouse` and `human` presets, leaving out `--genome`/`--gtf` downloads the
+GENCODE files below. Passing them uses your own files instead (see
+[Want a different release](#want-a-different-release-or-your-own-files)).
+
 ### Mouse — GRCm38/mm10, GENCODE M25, RepBase 25.05
 
 ```bash
@@ -162,8 +169,10 @@ The presets download these GENCODE files automatically:
 | mouse | [`GRCm38.primary_assembly.genome.fa.gz`](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M25/) | `gencode.vM25.primary_assembly.annotation.gtf.gz` |
 | human | [`GRCh38.primary_assembly.genome.fa.gz`](https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_40/) | `gencode.v40.chr_patch_hapl_scaff.basic.annotation.gtf.gz` |
 
-Want a different release, or files you already downloaded? Pass them
-directly and nothing is downloaded:
+### Want a different release, or your own files?
+
+Pass `--genome` and `--gtf` directly and nothing is downloaded. This also
+works on clusters without internet access on compute nodes:
 
 ```bash
 bash scripts/index/build_index.sh --species mouse \

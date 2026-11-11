@@ -41,14 +41,66 @@ conda activate kallisto_te
 
 # 2. Make sure it works (toy data, < 1 minute)
 bash test/run_toy_test.sh
+```
 
-# 3. Build a real index (RepBase archive downloaded from girinst.org)
+### 3. Build a real index
+
+`build_index.sh` needs three inputs:
+
+| Input | Flag | What it is |
+|-------|------|------------|
+| Genome | `--genome` | Genome FASTA (`.fa` or `.fa.gz`), e.g. `GRCm38.primary_assembly.genome.fa.gz` |
+| Gene annotation | `--gtf` | GTF matching that genome (`.gtf` or `.gtf.gz`), e.g. `gencode.vM25.primary_assembly.annotation.gtf.gz` |
+| TE consensus sequences | `--repbase` or `--te-fasta` | RepBase archive from [girinst.org](https://www.girinst.org/repbase/), or any TE consensus FASTA |
+
+You do **not** supply a transcriptome FASTA. `kb ref` builds the
+transcriptome from the genome + GTF, so genes and TEs are extracted the same
+way.
+
+**Option A: mouse or human, files downloaded for you.** With
+`--species mouse` or `--species human`, leave out `--genome` and `--gtf`. The
+script downloads the GENCODE genome and GTF listed under
+[Ready-made presets](#ready-made-presets) into `<outdir>/reference/`. You only
+provide RepBase:
+
+```bash
 bash scripts/index/build_index.sh \
     --species mouse \
     --repbase /path/to/RepBase25.05.fasta.tar.gz \
-    --name mm10_GencodeM25_RepBase25.05 \
-    --outdir /path/to/references/mm10_TE \
+    --name    mm10_GencodeM25_RepBase25.05 \
+    --outdir  /path/to/references/mm10_TE \
     --threads 16
+```
+
+**Option B: your own genome and GTF.** Pass `--genome` and `--gtf`, and
+nothing is downloaded. Use this for another genome build or annotation
+release, files you already have, or no internet on the cluster:
+
+```bash
+bash scripts/index/build_index.sh \
+    --species mouse \
+    --genome  /path/to/GRCm39.primary_assembly.genome.fa.gz \
+    --gtf     /path/to/gencode.vM36.primary_assembly.annotation.gtf.gz \
+    --repbase /path/to/RepBase28.10.fasta.tar.gz \
+    --name    mm39_GencodeM36_RepBase28.10 \
+    --outdir  /path/to/references/mm39_TE \
+    --threads 16
+```
+
+**Option C: any other species.** Use `--species custom`, which always needs
+`--genome`, `--gtf` and a TE library. See
+[docs/02_custom_species.md](docs/02_custom_species.md) for a worked example
+(*Arabidopsis*):
+
+```bash
+bash scripts/index/build_index.sh \
+    --species custom \
+    --genome   /path/to/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz \
+    --gtf      /path/to/Arabidopsis_thaliana.TAIR10.63.gtf.gz \
+    --te-fasta /path/to/Arabidopsis_TE_consensus.fa \
+    --name     TAIR10_Ensembl63 \
+    --outdir   /path/to/references/TAIR10_TE \
+    --threads 8
 ```
 
 Output used for quantification: `index/<name>_genes_TE.idx` and
@@ -71,11 +123,11 @@ Output used for quantification: `index/<name>_genes_TE.idx` and
 
 ### Ready-made presets
 
-| `--species` | Genome | Gene annotation | TE library (RepBase files) |
+| `--species` | Genome (downloaded unless you pass `--genome`) | Gene annotation (downloaded unless you pass `--gtf`) | TE library (RepBase files) |
 |-------------|--------|-----------------|----------------------------|
-| `mouse` | GRCm38 / mm10 primary assembly | GENCODE M25 | `mousub.ref` + `rodrep.ref` (we used RepBase 25.05) |
-| `human` | GRCh38 / hg38 primary assembly | GENCODE v40 basic | `humrep.ref` + `humsub.ref` (we used RepBase 28.04) |
-| `custom` | any FASTA | any GTF | any TE consensus FASTA, or RepBase files of your choice |
+| `mouse` | GRCm38 / mm10 primary assembly, GENCODE M25 | GENCODE M25 primary assembly | `mousub.ref` + `rodrep.ref` (we used RepBase 25.05) |
+| `human` | GRCh38 / hg38 primary assembly, GENCODE v40 | GENCODE v40 basic | `humrep.ref` + `humsub.ref` (we used RepBase 28.04) |
+| `custom` | your `--genome` (required) | your `--gtf` (required) | any TE consensus FASTA (`--te-fasta`), or RepBase files of your choice (`--repbase` + `--te-libs`) |
 
 ---
 
