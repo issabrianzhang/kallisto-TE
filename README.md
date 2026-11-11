@@ -222,15 +222,26 @@ Each script prints its own help with `-h`, e.g.
   library (EDTA / RepeatModeler2)
 * For mammals: ~64 GB RAM and ~100 GB disk while building the index
 
-Already have kb-python? These also work:
+Prefer pip, or your own conda command, over the environment file? Install
+the same pinned version:
 
 ```bash
-pip install kb-python
-# or
-conda create -n kallisto_te -c conda-forge -c bioconda kb-python
+pip install kb-python==0.30.2
 ```
 
-Use the same kb-python version to build the index and to quantify.
+```bash
+conda create -n kallisto_te -c conda-forge -c bioconda kb-python=0.30.2
+```
+
+* **0.30.2 is the tested version.** Newer releases will probably work but
+  have not been tested here.
+* **kb-python 0.28 or newer is required.** Older versions have no D-list
+  support, so they build a different index; `build_index.sh` stops with an
+  error if it finds one. An existing environment with an older kb-python
+  (check with `kb --version`) needs a new environment.
+* **Use the same kb-python version to build the index and to quantify.**
+  Index formats changed in kb-python 0.28 (kallisto 0.50): an index built
+  with an older version cannot be read by a newer one, and the reverse.
 
 ---
 
