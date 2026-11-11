@@ -1,0 +1,188 @@
+te_id	dfam_accession	dfam_version	name	repeat_type	repeat_subtype	classification	clades	length	curated
+LSU-rRNA_Hsa_rRNA	DF000000772	5	LSU-rRNA_Hsa	rRNA		root;Interspersed_Repeat;Pseudogene;RNA;rRNA	Metazoa	5035	yes
+SSU-rRNA_Hsa_rRNA	DF000001066	5	SSU-rRNA_Hsa	rRNA		root;Interspersed_Repeat;Pseudogene;RNA;rRNA	Metazoa	1869	yes
+Vingi-2_CE_LINE-I-Jockey	DF000001347	2	Vingi-2_CE	LINE	I-Jockey	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;R1-group;I-group;Jockey	Caenorhabditis elegans	1460	yes
+CELE12A_DNA-TcMar-Pogo	DF000001348	1	CELE12A	DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Caenorhabditis elegans	368	yes
+CELE12B_DNA-TcMar-Pogo	DF000001349	1	CELE12B	DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Caenorhabditis elegans	171	yes
+CELE14A_DNA	DF000001350	1	CELE14A	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	177	yes
+CELE14B_DNA	DF000001351	1	CELE14B	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	187	yes
+CELE2_DNA	DF000001352	1	CELE2	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	325	yes
+CELE45_SINE-tRNA-RTE	DF000001353	1	CELE45	SINE	tRNA-RTE	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;No_or_Unknown_Core;RTE-end	Caenorhabditis elegans	266	yes
+CELE46A_DNA	DF000001354	1	CELE46A	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	438	yes
+CELE46B_DNA	DF000001355	1	CELE46B	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	705	yes
+CELE4_DNA	DF000001356	1	CELE4	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	470	yes
+CELE7_DNA	DF000001357	1	CELE7	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	363	yes
+CELETC2_DNA-TcMar-Pogo	DF000001358	1	CELETC2	DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Caenorhabditis elegans	446	yes
+CEMUDR1_DNA-MULE-MuDR	DF000001359	1	CEMUDR1	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	7227	yes
+CEMUDR2_DNA-MULE-MuDR	DF000001360	2	CEMUDR2	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	5505	yes
+CER10-I_CE_LTR-Pao	DF000001361	2	CER10-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	11155	yes
+CER11-I_CE_LTR-Pao	DF000001362	2	CER11-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	7438	yes
+CER12-I_CE_LTR-Pao	DF000001363	2	CER12-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	10993	yes
+CER15-1-I_CE_LTR-Pao	DF000001364	2	CER15-1-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	6211	yes
+CER15-I_CE_LTR-Pao	DF000001365	2	CER15-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	10798	yes
+CER16-2-I_CE_LTR-Pao	DF000001366	1	CER16-2-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	8234	yes
+CER16-I_CE_LTR-Pao	DF000001367	2	CER16-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	6499	yes
+CER17-I_CE_LTR-Pao	DF000001368	2	CER17-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	3820	yes
+CER1_LTR-Gypsy	DF000001369	1	CER1	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	7881	yes
+CER2-I_CE_LTR-Gypsy	DF000001370	2	CER2-I_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	8558	yes
+CER2-LTR_CE_LTR-Gypsy	DF000001371	1	CER2-LTR_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	643	yes
+CER3-I_CE_LTR-Gypsy	DF000001372	2	CER3-I_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	7872	yes
+CER3-LTR_CE_LTR-Gypsy	DF000001373	2	CER3-LTR_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	424	yes
+CER4-I_CE_LTR-Gypsy	DF000001374	2	CER4-I_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	4754	yes
+CER5-I_CE_LTR-Gypsy	DF000001375	2	CER5-I_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	4660	yes
+CER5-LTR_CE_LTR-Gypsy	DF000001376	1	CER5-LTR_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	211	yes
+CER6-I_CE_LTR-Gypsy	DF000001377	2	CER6-I_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	4675	yes
+CER6-LTR_CE_LTR-Gypsy	DF000001378	1	CER6-LTR_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	218	yes
+CER7-I_CE_LTR-Pao	DF000001379	2	CER7-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	9400	yes
+CER7-LTR_CE_LTR-Pao	DF000001380	1	CER7-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	327	yes
+CER8-I_CE_LTR-Pao	DF000001381	2	CER8-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	17003	yes
+CER8-LTR_CE_LTR-Pao	DF000001382	1	CER8-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	559	yes
+CER9-I_CE_LTR-Pao	DF000001383	2	CER9-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	12554	yes
+CeRep1A_DNA-MULE-MuDR	DF000001384	1	CeRep1A	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	3401	yes
+CeRep3_Unknown	DF000001385	1	CeRep3	Unknown		root;Interspersed_Repeat;Unknown	Caenorhabditis elegans	302	yes
+CeRep4_Unknown	DF000001386	1	CeRep4	Unknown		root;Interspersed_Repeat;Unknown	Caenorhabditis elegans	190	yes
+CeRep52_Satellite	DF000001387	1	CeRep52	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	112	yes
+CeRep53_Satellite	DF000001388	2	CeRep53	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	158	yes
+CeRep54_Satellite	DF000001389	1	CeRep54	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	112	yes
+CeRep55_Satellite	DF000001390	1	CeRep55	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	100	yes
+CeRep56_Satellite	DF000001391	1	CeRep56	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	100	yes
+CeRep57_Satellite	DF000001392	2	CeRep57	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	120	yes
+CeRep58_Satellite	DF000001393	1	CeRep58	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	96	yes
+CeRep59_Satellite	DF000001394	1	CeRep59	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	188	yes
+CeRep5_Unknown	DF000001395	1	CeRep5	Unknown		root;Interspersed_Repeat;Unknown	Caenorhabditis elegans	303	yes
+CERP16_DNA-hAT	DF000001396	1	CERP16	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	233	yes
+CERP3_Unknown	DF000001397	1	CERP3	Unknown		root;Interspersed_Repeat;Unknown	Caenorhabditis elegans	1074	yes
+CERP4_DNA-TcMar-Mariner	DF000001398	1	CERP4	DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Caenorhabditis elegans	911	yes
+Chapaev-1_CE_DNA-CMC-Chapaev	DF000001399	2	Chapaev-1_CE	DNA	CMC-Chapaev	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;Chapaev_group;Chapaev	Caenorhabditis elegans	4753	yes
+DNA-3-1_CE_DNA-TcMar-Tc4	DF000001400	1	DNA-3-1_CE	DNA	TcMar-Tc4	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc4	Caenorhabditis elegans	711	yes
+HAT1_CE_DNA-hAT-Ac	DF000001401	1	HAT1_CE	DNA	hAT-Ac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT;Activator	Caenorhabditis elegans	495	yes
+HAT2_CE_DNA-hAT	DF000001402	2	HAT2_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	564	yes
+HAT3_CE_DNA-hAT	DF000001403	1	HAT3_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	391	yes
+HAT4_CE_DNA-hAT	DF000001404	1	HAT4_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	592	yes
+HATN1_CE_DNA-hAT	DF000001405	1	HATN1_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	265	yes
+Helitron1_CE_RC-Helitron	DF000001406	2	Helitron1_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	8484	yes
+Helitron2_CE_RC-Helitron	DF000001407	1	Helitron2_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	5514	yes
+HelitronY1A_CE_RC-Helitron	DF000001408	1	HelitronY1A_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	3084	yes
+HelitronY1_CE_RC-Helitron	DF000001409	1	HelitronY1_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	2593	yes
+HelitronY2_CE_RC-Helitron	DF000001410	1	HelitronY2_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	247	yes
+HelitronY3_CE_RC-Helitron	DF000001411	1	HelitronY3_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	193	yes
+HelitronY4_CE_RC-Helitron	DF000001412	1	HelitronY4_CE	RC	Helitron	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Helicase;Helitron-1	Caenorhabditis elegans	1855	yes
+IR1_CE_DNA	DF000001413	1	IR1_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	379	yes
+IR3_CE_DNA-PiggyBac	DF000001414	1	IR3_CE	DNA	PiggyBac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PiggyBac_Group;PiggyBac	Caenorhabditis elegans	578	yes
+IR4_DNA	DF000001415	1	IR4	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	227	yes
+LINE2A_CE_LINE-CR1	DF000001416	1	LINE2A_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	4082	yes
+LINE2B_CE_LINE-CR1	DF000001417	1	LINE2B_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	3259	yes
+LINE2C_CE_LINE-CR1	DF000001418	2	LINE2C_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	3328	yes
+LINE2D_CE_LINE-CR1	DF000001419	2	LINE2D_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	2651	yes
+LINE2E_CE_LINE-CR1	DF000001420	2	LINE2E_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	3933	yes
+LINE2G_CE_LINE-CR1	DF000001421	2	LINE2G_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	2835	yes
+LINE2H_CE_LINE-CR1	DF000001422	1	LINE2H_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	2978	yes
+LmeSINE1c_SINE-tRNA-Deu-L2	DF000001423	1	LmeSINE1c	SINE	tRNA-Deu-L2	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE;tRNA_Promoter;Deu-core;L2-end	Metazoa	121	yes
+LONGPAL1_DNA-MULE-MuDR	DF000001424	2	LONGPAL1	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	2591	yes
+LONGPAL2_DNA-MULE-MuDR	DF000001425	2	LONGPAL2	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	3232	yes
+LONGPAL3_DNA-MULE-MuDR	DF000001426	1	LONGPAL3	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	1299	yes
+LR9A_DNA-hAT	DF000001427	1	LR9A	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	205	yes
+LSU-rRNA_Cel_rRNA	DF000001428	2	LSU-rRNA_Cel	rRNA		root;Interspersed_Repeat;Pseudogene;RNA;rRNA	Metazoa	2432	yes
+LSU-rRNA_Dme_rRNA	DF000001429	1	LSU-rRNA_Dme	rRNA		root;Interspersed_Repeat;Pseudogene;RNA;rRNA	Protostomia	3900	yes
+LTR1_CE_LTR-Pao	DF000001430	2	LTR1_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	499	yes
+LTR2_CE_LTR	DF000001431	1	LTR2_CE	LTR		root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element	Caenorhabditis elegans	434	yes
+LTRCER1_LTR-Gypsy	DF000001432	1	LTRCER1	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	492	yes
+MAR_CE_DNA-TcMar-Mariner	DF000001433	1	MAR_CE	DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Caenorhabditis elegans	1239	yes
+MARINCE1_DNA-TcMar-Tc1	DF000001434	1	MARINCE1	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	1286	yes
+Mariner3_CE_DNA-TcMar-Mariner	DF000001435	1	Mariner3_CE	DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Caenorhabditis elegans	1253	yes
+Mariner4_CE_DNA-TcMar-Mariner	DF000001436	1	Mariner4_CE	DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Caenorhabditis elegans	1250	yes
+Mariner5_CE_DNA-TcMar-Mariner	DF000001437	2	Mariner5_CE	DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Caenorhabditis elegans	1247	yes
+Merlin1m_CE_DNA-Merlin	DF000001438	1	Merlin1m_CE	DNA	Merlin	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Merlin	Caenorhabditis elegans	388	yes
+MIRAGE1_DNA-CMC-Mirage	DF000001439	2	MIRAGE1	DNA	CMC-Mirage	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;Mirage	Caenorhabditis elegans	5625	yes
+MSAT1_CE_Satellite	DF000001440	1	MSAT1_CE	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	226	yes
+NDNAX1_CE_DNA	DF000001441	1	NDNAX1_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	2085	yes
+NDNAX2_CE_DNA	DF000001442	1	NDNAX2_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	2844	yes
+NDNAX3_CE_DNA	DF000001443	1	NDNAX3_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	1591	yes
+NeSL-1_LINE-R2	DF000001444	2	NeSL-1	LINE	R2	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-1;R2-like;R2	Caenorhabditis elegans	7028	yes
+NPAL0A_CE_DNA	DF000001445	1	NPAL0A_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	286	yes
+NPAL5A_CE_DNA-CMC-Chapaev	DF000001446	1	NPAL5A_CE	DNA	CMC-Chapaev	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;Chapaev_group;Chapaev	Caenorhabditis elegans	237	yes
+NPALTA1_CE_DNA	DF000001447	1	NPALTA1_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	177	yes
+NTC2A_DNA-TcMar-Pogo	DF000001448	1	NTC2A	DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Caenorhabditis elegans	470	yes
+PAL3A_CE_DNA	DF000001449	1	PAL3A_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	150	yes
+PAL5A_CE_DNA	DF000001450	1	PAL5A_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	792	yes
+PAL8A_CE_DNA-hAT	DF000001451	1	PAL8A_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	389	yes
+PAL8B_CE_DNA-hAT	DF000001452	1	PAL8B_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	386	yes
+PAL8C_1_DNA-hAT	DF000001453	1	PAL8C_1	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	212	yes
+PAL8C_2_DNA-hAT	DF000001454	1	PAL8C_2	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	213	yes
+PAL8C_3_DNA-hAT	DF000001455	1	PAL8C_3	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	211	yes
+PAL8C_4_DNA-Merlin	DF000001456	1	PAL8C_4	DNA	Merlin	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Merlin	Caenorhabditis elegans	201	yes
+PAL8C_5_DNA-hAT	DF000001457	1	PAL8C_5	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	201	yes
+PAL9A_CE_DNA-MULE-MuDR	DF000001458	1	PAL9A_CE	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	1947	yes
+PALNN1_CE_DNA-CMC-Mirage	DF000001459	1	PALNN1_CE	DNA	CMC-Mirage	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;Mirage	Caenorhabditis elegans	210	yes
+PALTA1_CE_DNA-TcMar-Tc1	DF000001460	2	PALTA1_CE	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	1466	yes
+PALTA2_CE_DNA-TcMar-Tc1	DF000001461	2	PALTA2_CE	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	1534	yes
+PALTA3_CE_DNA-TcMar-Tc1	DF000001462	1	PALTA3_CE	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	360	yes
+PALTA5_CE_DNA-TcMar-Tc1	DF000001463	1	PALTA5_CE	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	352	yes
+PALTTAA1_CE_DNA-PiggyBac	DF000001464	1	PALTTAA1_CE	DNA	PiggyBac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PiggyBac_Group;PiggyBac	Caenorhabditis elegans	596	yes
+PALTTTAAA1_DNA	DF000001465	1	PALTTTAAA1	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	593	yes
+PALTTTAAA2_DNA-PiggyBac	DF000001466	1	PALTTTAAA2	DNA	PiggyBac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PiggyBac_Group;PiggyBac	Caenorhabditis elegans	680	yes
+RC123_Satellite	DF000001467	1	RC123	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	369	yes
+RC35_Satellite	DF000001468	1	RC35	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	216	yes
+RC35S_Satellite	DF000001469	1	RC35S	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	210	yes
+RCA1_Satellite	DF000001470	1	RCA1	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	176	yes
+RCC9_Satellite	DF000001471	1	RCC9	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	240	yes
+RCD1_Satellite	DF000001472	1	RCD1	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	151	yes
+RCS5_Satellite	DF000001473	1	RCS5	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	1428	yes
+SSU-rRNA_Cel_rRNA	DF000001474	2	SSU-rRNA_Cel	rRNA		root;Interspersed_Repeat;Pseudogene;RNA;rRNA	Metazoa	777	yes
+SSU-rRNA_Dme_rRNA	DF000001475	2	SSU-rRNA_Dme	rRNA		root;Interspersed_Repeat;Pseudogene;RNA;rRNA	Protostomia	428	yes
+Tc1A_DNA-TcMar-Tc1	DF000001476	1	Tc1A	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	855	yes
+Tc1_DNA-TcMar-Tc1	DF000001477	1	Tc1	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	1610	yes
+TC2_DNA-TcMar-Tc2	DF000001478	1	TC2	DNA	TcMar-Tc2	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Tc2	Caenorhabditis elegans	2074	yes
+TC4_DNA-TcMar-Tc4	DF000001479	2	TC4	DNA	TcMar-Tc4	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc4	Caenorhabditis elegans	3483	yes
+TC5A_DNA-TcMar-Tc4	DF000001480	1	TC5A	DNA	TcMar-Tc4	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc4	Caenorhabditis elegans	1608	yes
+TC5B_DNA-TcMar-Tc4	DF000001481	1	TC5B	DNA	TcMar-Tc4	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc4	Caenorhabditis elegans	641	yes
+TIR21T5A_CE_DNA	DF000001482	1	TIR21T5A_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	166	yes
+TIR23T5A_CE_DNA	DF000001483	2	TIR23T5A_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	1658	yes
+TIR43YW1_CE_DNA	DF000001484	1	TIR43YW1_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	1740	yes
+TIR54TA1_CE_DNA	DF000001485	1	TIR54TA1_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	196	yes
+TIR9TA1A_CE_DNA	DF000001486	1	TIR9TA1A_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	337	yes
+TIR9TA1B_CE_DNA-hAT	DF000001487	1	TIR9TA1B_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	274	yes
+TIR9TA1C_CE_DNA-hAT	DF000001488	1	TIR9TA1C_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	255	yes
+TIR9TA1_CE_DNA	DF000001489	1	TIR9TA1_CE	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	322	yes
+TR5_Unknown	DF000001490	1	TR5	Unknown		root;Interspersed_Repeat;Unknown	Caenorhabditis elegans	1654	yes
+Turmoil1_DNA-PIF-Harbinger	DF000001491	2	Turmoil1	DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Caenorhabditis elegans	5024	yes
+Turmoil2_DNA-PIF-Harbinger	DF000001492	2	Turmoil2	DNA	PIF-Harbinger	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PIF-Harbinger;Harbinger	Caenorhabditis elegans	6999	yes
+CELE11_DNA-TcMar-Pogo	DF000001493	1	CELE11	DNA	TcMar-Pogo	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc2-group;Pogo	Caenorhabditis elegans	218	yes
+CELE42_DNA	DF000001494	1	CELE42	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	238	yes
+CELE6_DNA-TcMar-Tc1	DF000001495	1	CELE6	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	158	yes
+CER10-LTR_CE_LTR-Pao	DF000001496	1	CER10-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	648	yes
+CER11-LTR_CE_LTR-Pao	DF000001497	1	CER11-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	559	yes
+CER12-1-LTR_CE_LTR-Pao	DF000001498	1	CER12-1-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	529	yes
+CER12-LTR_CE_LTR-Pao	DF000001499	1	CER12-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	537	yes
+CER13-I_CE_LTR-Pao	DF000001500	2	CER13-I_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	8008	yes
+CER13-LTR_CE_LTR-Pao	DF000001501	1	CER13-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	243	yes
+CER15-1-LTR_CE_LTR-Pao	DF000001502	2	CER15-1-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	453	yes
+CER15-LTR_CE_LTR-Pao	DF000001503	2	CER15-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	447	yes
+CER16-1-LTR_CE_LTR-Pao	DF000001504	1	CER16-1-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	562	yes
+CER16-2-LTR_CE_LTR-Pao	DF000001505	1	CER16-2-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	492	yes
+CER16-LTR_CE_LTR-Pao	DF000001506	1	CER16-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	544	yes
+CER17-LTR_CE_LTR-Pao	DF000001507	1	CER17-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	294	yes
+CER2-1-LTR_CE_LTR-Pao	DF000001508	1	CER2-1-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	620	yes
+CER3-1-LTR_CE_LTR-Gypsy	DF000001509	1	CER3-1-LTR_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	432	yes
+CER4-LTR_CE_LTR-Gypsy	DF000001510	1	CER4-LTR_CE	LTR	Gypsy	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Gypsy-ERV;Gypsy	Caenorhabditis elegans	162	yes
+CER9-LTR_CE_LTR-Pao	DF000001511	1	CER9-LTR_CE	LTR	Pao	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;Retrotransposon;Long_Terminal_Repeat_Element;Bel-Pao	Caenorhabditis elegans	517	yes
+CERP1_Unknown	DF000001512	2	CERP1	Unknown		root;Interspersed_Repeat;Unknown	Caenorhabditis elegans	222	yes
+CERP2_DNA	DF000001513	1	CERP2	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	328	yes
+Chapaev-2_CE_DNA-CMC-Chapaev	DF000001514	2	Chapaev-2_CE	DNA	CMC-Chapaev	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;CACTA;CMC;Chapaev_group;Chapaev	Caenorhabditis elegans	5022	yes
+LINE2F_CE_LINE-CR1	DF000001515	1	LINE2F_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	957	yes
+Mariner2_CE_DNA-TcMar-Mariner	DF000001516	1	Mariner2_CE	DNA	TcMar-Mariner	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Mariner	Caenorhabditis elegans	1242	yes
+MINISAT1_CE_Satellite	DF000001517	1	MINISAT1_CE	Satellite		root;Tandem_Repeat;Satellite	Caenorhabditis elegans	238	yes
+PALTA4_CE_DNA-TcMar-Tc1	DF000001518	1	PALTA4_CE	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	198	yes
+PALTTAA2_CE_DNA-PiggyBac	DF000001519	1	PALTTAA2_CE	DNA	PiggyBac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PiggyBac_Group;PiggyBac	Caenorhabditis elegans	182	yes
+RC14_DNA-MULE-MuDR	DF000001520	1	RC14	DNA	MULE-MuDR	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Mutator-like;MuDR	Caenorhabditis elegans	169	yes
+RTE1_LINE-RTE-RTE	DF000001521	1	RTE1	LINE	RTE-RTE	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;RTE-like;RTE-group;RTE	Caenorhabditis elegans	3291	yes
+SINE1_CE_SINE	DF000001522	1	SINE1_CE	SINE		root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE-dependent_Retroposon;SINE	Caenorhabditis elegans	261	yes
+TC5_DNA-TcMar-Tc4	DF000001523	1	TC5	DNA	TcMar-Tc4	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc4	Caenorhabditis elegans	3171	yes
+Vingi-1_CE_LINE-I-Jockey	DF000001524	2	Vingi-1_CE	LINE	I-Jockey	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;R1-group;I-group;Jockey	Caenorhabditis elegans	2860	yes
+CELE1_DNA-TcMar-Tc1	DF000004107	1	CELE1	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	329	yes
+Tc6_DNA-TcMar-Tc1	DF000004108	1	Tc6	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	1603	yes
+PALTTTAAA3_DNA	DF000004131	1	PALTTTAAA3	DNA		root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase	Caenorhabditis elegans	1503	yes
+PALTTAA3_CE_DNA-PiggyBac	DF000004133	1	PALTTAA3_CE	DNA	PiggyBac	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;PiggyBac_Group;PiggyBac	Caenorhabditis elegans	602	yes
+PAL8D_CE_DNA-hAT	DF000004134	1	PAL8D_CE	DNA	hAT	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;hAT	Caenorhabditis elegans	410	yes
+LINE2C1_CE_LINE-CR1	DF000004135	2	LINE2C1_CE	LINE	CR1	root;Interspersed_Repeat;Transposable_Element;Class_I_Retrotransposition;LINE;Group-II;Group-2;R1-like;CR1-group;CR1	Caenorhabditis elegans	3207	yes
+Tc3_DNA-TcMar-Tc1	DF000004136	1	Tc3	DNA	TcMar-Tc1	root;Interspersed_Repeat;Transposable_Element;Class_II_DNA_Transposition;Transposase;Tc1-Mariner;Tc1	Caenorhabditis elegans	2337	yes

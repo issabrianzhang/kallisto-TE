@@ -21,3 +21,6 @@ slurm-*.out
 # OS / editor
 .DS_Store
 *.swp
+
+# ...except the bundled, open-access Dfam TE libraries
+!te_libraries/dfam/*.fa.gz

@@ -125,8 +125,18 @@ To look inside first:
 tar -tzf RepBase25.05.fasta.tar.gz | head
 ```
 
-> **No RepBase access?** Any TE consensus FASTA works, for example from Dfam
-> or a de novo library from RepeatModeler2/EDTA. See
+> **No RepBase access?** Use the open-access Dfam 4.0 libraries bundled in
+> [`te_libraries/dfam/`](../te_libraries/dfam/README.md): add `--dfam` instead
+> of `--repbase` for mouse or human. Nothing to download or register:
+>
+> ```bash
+> bash scripts/index/build_index.sh --species mouse --dfam \
+>     --name mm10_GencodeM25_Dfam4.0 --outdir /path/to/references/mm10_Dfam_TE --threads 16
+> ```
+>
+> Dfam and RepBase use different TE names and family sets (mouse: 1,362 Dfam
+> vs 1,740 RepBase 25.05 families), so use one library per project. Any
+> other TE consensus FASTA also works (`--te-fasta`), see
 > [02_custom_species.md §3](02_custom_species.md#3-get-te-consensus-sequences).
 
 ---

@@ -31,6 +31,9 @@
 #   -o, --outdir       output directory (created if needed)
 #
 # TE library (one of):
+#       --dfam         use the bundled, open-access Dfam 4.0 curated library
+#                      for the preset species (te_libraries/dfam/); no
+#                      download or registration needed
 #   -r, --repbase      RepBase archive (RepBaseXX.XX.fasta.tar.gz) or the
 #                      folder it extracts to
 #   -l, --te-libs      RepBase *.ref files to use, quoted & space separated
@@ -53,6 +56,7 @@
 #   -h, --help         show this help
 #
 # Examples:
+#   build_index.sh -s mouse --dfam -o ref/mm10_Dfam_TE -t 16
 #   build_index.sh -s mouse -r RepBase25.05.fasta.tar.gz -o ref/mm10_TE -t 16
 #   build_index.sh -s human -r RepBase28.04.fasta.tar.gz -o ref/hg38_TE -t 16
 #   build_index.sh -s custom -n danRer11 -g danRer11.fa.gz -a danRer11.gtf.gz \
@@ -67,8 +71,9 @@ die()   { echo "ERROR: $*" >&2; exit 1; }
 
 # ------------------------------- arguments ----------------------------------
 SPECIES="" OUTDIR="" REPBASE="" TE_LIBS="" GENOME="" GTF="" NAME=""
-THREADS=8 DLIST="genome" TMPDIR_KB=""
+THREADS=8 DLIST="genome" TMPDIR_KB="" USE_DFAM=0
 TE_FASTAS=()
+REPO_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -77,6 +82,7 @@ while [[ $# -gt 0 ]]; do
         -r|--repbase)  REPBASE="$2"; shift 2 ;;
         -l|--te-libs)  TE_LIBS="$2"; shift 2 ;;
         -e|--te-fasta) TE_FASTAS+=("$2"); shift 2 ;;
+        --dfam)        USE_DFAM=1; shift ;;
         -g|--genome)   GENOME="$2"; shift 2 ;;
         -a|--gtf)      GTF="$2"; shift 2 ;;
         -n|--name)     NAME="$2"; shift 2 ;;
@@ -112,7 +118,13 @@ case "$SPECIES" in
         ;;
     *) die "--species must be mouse, human or custom" ;;
 esac
-[[ -n "$REPBASE" || ${#TE_FASTAS[@]} -gt 0 ]] || die "give a TE library with --repbase and/or --te-fasta"
+if [[ $USE_DFAM -eq 1 ]]; then
+    [[ "$SPECIES" != "custom" ]] || die "--dfam works with --species mouse/human; for other species pass a file from te_libraries/dfam/ (or fetch_dfam.py output) with --te-fasta"
+    DFAM_FA="$REPO_DIR/te_libraries/dfam/${SPECIES}_Dfam4.0_curated.fa.gz"
+    [[ -s "$DFAM_FA" ]] || die "bundled Dfam library not found: $DFAM_FA"
+    TE_FASTAS+=("$DFAM_FA")
+fi
+[[ -n "$REPBASE" || ${#TE_FASTAS[@]} -gt 0 ]] || die "give a TE library with --dfam, --repbase and/or --te-fasta"
 [[ "$DLIST" == "none" || "$DLIST" == "genome" ]] || die "--d-list must be none or genome"
 command -v kb >/dev/null 2>&1 || die "kb not found. Activate the environment first: conda activate kallisto_te"
 

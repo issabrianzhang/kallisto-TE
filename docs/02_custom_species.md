@@ -121,12 +121,42 @@ Notes:
 * The same entry can appear in several `*.ref` files. Exact duplicates are
   removed automatically in the next step.
 
-### Route B: Dfam (open access)
+### Route B: Dfam (open access, CC0; easiest)
 
-[Dfam](https://www.dfam.org/) is an open database of TE families (HMMs and
-consensus sequences). Export your species' families as a consensus FASTA
-with Dfam's `famdb.py` tool (see the Dfam documentation for the current
-command). Dfam is especially complete for vertebrates and model animals.
+[Dfam](https://www.dfam.org/) is an open database of TE families. Ready-made
+Dfam 4.0 libraries are already in the repository, under
+[`te_libraries/dfam/`](../te_libraries/dfam/README.md):
+
+| Species | File |
+|---------|------|
+| zebrafish | `te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz` (1,965 families) |
+| fruit fly | `te_libraries/dfam/fly_Dfam4.0_curated.fa.gz` (390) |
+| *C. elegans* | `te_libraries/dfam/worm_Dfam4.0_curated.fa.gz` (187) |
+| *Arabidopsis* | `te_libraries/dfam/arabidopsis_Dfam4.0_uncurated.fa.gz` (503, uncurated) |
+| mouse / human | use `--dfam` with `--species mouse` / `human` |
+
+Each comes with an `.annotation.tsv` table (Dfam accession, TE class and
+subclass, clade, length) for grouping TEs in your analysis.
+
+For any other species in Dfam, download its library in one command (Python
+standard library only):
+
+```bash
+python3 scripts/te_libraries/fetch_dfam.py --species "Rattus norvegicus" --out rat_Dfam4.0_curated
+```
+
+The script collects the families defined for the species, its ancestor
+groups and its descendants, and writes `rat_Dfam4.0_curated.fa.gz` and
+`rat_Dfam4.0_curated.annotation.tsv`. If it finds nothing, the species has no
+*curated* Dfam families (true for most plants). Add `--include-uncurated` for
+Dfam's de novo families, as was done for Arabidopsis.
+
+> **Arabidopsis note:** Dfam has no curated Arabidopsis families. The
+> bundled file holds 503 uncurated de novo families, named by Dfam accession
+> (e.g. `DR003462015_LTR-Gypsy`) and often classified only as `Unknown`. It
+> works for a first look. For publication-quality plant analyses, Route A
+> (RepBase) or Route C (EDTA) usually gives better-named, better-curated
+> families.
 
 ### Route C: Build a de novo library (any genome, no database needed)
 
