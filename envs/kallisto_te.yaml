@@ -13,5 +13,7 @@ channels:
 dependencies:
   - python >=3.9
   - kb-python =0.30.2   # bundles kallisto 0.51.x and bustools
+  - fastp =1.4.0        # read trimming + QC (step 2)
+  - multiqc =1.35       # combines the fastp reports into one page (step 2)
   - samtools            # optional, handy for inspecting FASTA files
   - wget
