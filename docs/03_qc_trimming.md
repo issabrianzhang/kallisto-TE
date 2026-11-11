@@ -68,11 +68,24 @@ The script recognises these naming styles automatically:
 | Paired-end (Illumina) | `Ctrl_S1_L001_R1_001.fastq.gz` + `Ctrl_S1_L001_R2_001.fastq.gz` | `Ctrl_S1_L001` |
 | Paired-end (SRA / ENA downloads) | `SRR1234567_1.fastq.gz` + `SRR1234567_2.fastq.gz` | `SRR1234567` |
 | Single-end | `Ctrl_Rep1.fq.gz` (or `Ctrl_Rep1_R1.fq.gz` with no R2) | `Ctrl_Rep1` |
+| Single-end replicates numbered `_1` / `_2` | `Ctrl_1.fq.gz`, `Ctrl_2.fq.gz` | `Ctrl_1`, `Ctrl_2` (see below) |
 
 > **Paired-end** means two files per sample, read 1 and read 2, from the two
 > ends of the same RNA fragment. **Single-end** means one file per sample.
 > Your sequencing facility's report tells you which you have (e.g. "PE150"
-> = paired-end, 150 bp).
+> = paired-end, 150 bp; "SE75" = single-end, 75 bp).
+
+**How the script tells pairs from look-alikes.** `Ctrl_1.fq.gz` +
+`Ctrl_2.fq.gz` could be read 1 + read 2 of one sample, or two single-end
+replicates. The script checks the read names inside the files. Real mates
+carry the same names, so files whose read names differ are trimmed as
+separate single-end samples, and the script prints a `NOTE` saying so.
+Check that note against what you know about your data. To skip pairing
+entirely, run with `--single-end`:
+
+```bash
+bash scripts/qc/run_fastp.sh --input /path/to/fastq --outdir /path/to/01_trimmed --single-end
+```
 
 Peek inside one file to see what a read looks like. Each read takes 4
 lines: name, sequence, `+`, quality.
@@ -217,9 +230,11 @@ Worth looking at:
 |---------|--------------|------------|
 | `no FASTQ files ... in` | wrong folder, or files are not `.fq.gz` / `.fastq.gz` / `.fq` / `.fastq` | check the path with `ls` |
 | `These samples look like droplet single-cell RNA-seq` ... `stopped before trimming` | read 1 is ≤ 30 bp and read 2 much longer: the barcode + cDNA layout of 10x / Drop-seq data | single-cell data: don't trim, use the raw files with `kb count`. If they really are bulk reads with a short read 1, re-run with `--force-sc` |
-| Pairs listed as two single-end samples | read 1 / read 2 are named differently than expected | tell the script the read-1 tag, e.g. `--r1-tag _read1` (read 2 must then be `_read2`) |
+| Pairs listed as two single-end samples, **without** a `NOTE` | read 1 / read 2 are named differently than expected | tell the script the read-1 tag, e.g. `--r1-tag _read1` (read 2 must then be `_read2`) |
+| `NOTE: these files look like pairs by name, but their read names differ` | the two files are not mates, e.g. single-end replicates `Ctrl_1` / `Ctrl_2` | nothing, if they really are single-end; they are trimmed separately. If they *should* be pairs, the files may be mismatched or re-sorted: check with `gzip -dc file_1.fq.gz \| head -1` on both |
+| Single-end samples you know are single-end are being paired | very unusual (identical read names) | run with `--single-end` |
 | `percent_kept` far below 90% in one sample | low-quality or failed library | look at that sample's "Filtered Reads" and quality plots; ask the sequencing core |
-| `adapter_trimmed_reads` is 0 for **single-end** data | fastp could not detect the adapter automatically | give it explicitly: `--fastp-args "--adapter_sequence AGATCGGAAGAGC"` (standard Illumina TruSeq adapter start) |
+| `WARNING: fastp found no adapter in these single-end samples` (and `adapter_trimmed_reads` is 0) | in single-end data fastp has to *find* the adapter in the reads, and sometimes cannot | give it explicitly and re-run: `--force --fastp-args "--adapter_sequence AGATCGGAAGAGC"` (start of the Illumina TruSeq adapter; check your library kit). `--force` re-trims every sample, so all samples get the same settings |
 | `fastp not found` | environment not active | `conda activate kallisto_te` |
 
 ---

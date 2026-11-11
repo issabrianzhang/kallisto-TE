@@ -20,6 +20,8 @@
 #   -t, --threads      threads per fastp run (default: 8; fastp uses at most 16)
 #       --r1-tag TAG   text that marks read 1 in file names, e.g. "_R1" or "_1"
 #                      (default: auto-detect "_R1_001", "_R1" or "_1")
+#       --single-end   treat every file as its own single-end sample, whatever
+#                      its name (e.g. replicates named Ctrl_1 / Ctrl_2)
 #       --fastqc       also run FastQC on the raw reads (optional; fastp's own
 #                      report already covers the usual checks)
 #       --fastp-args "ARGS"   extra fastp options, e.g. "--detect_adapter_for_pe"
@@ -33,6 +35,10 @@
 #                 Sample1_R1_001.fastq.gz + Sample1_R2_001.fastq.gz  (Illumina)
 #                 Sample1_1.fq.gz + Sample1_2.fq.gz                  (SRA / ENA)
 #   single-end :  Sample1_R1.fq.gz with no R2 file, or Sample1.fq.gz
+#
+# Pairs are checked: read 1 and read 2 of a real pair carry the same read
+# names. Two files that only LOOK like a pair (e.g. single-end replicates
+# Ctrl_1.fq.gz + Ctrl_2.fq.gz) are treated as two single-end samples.
 #
 # Outputs:
 #   OUT_DIR/trimmed/<sample>_R1.trimmed.fq.gz  (+ _R2 for paired-end)
@@ -51,13 +57,14 @@ set -euo pipefail
 usage() { awk 'NR>2 && /^# ====/{exit} NR>2{sub(/^# ?/,""); print}' "$0"; exit "${1:-0}"; }
 die()   { echo "ERROR: $*" >&2; exit 1; }
 
-IN="" OUT="" THREADS=8 R1TAG="" FASTQC=0 FASTP_ARGS="" FORCE=0 FORCE_SC=0
+IN="" OUT="" THREADS=8 R1TAG="" FASTQC=0 FASTP_ARGS="" FORCE=0 FORCE_SC=0 SINGLE=0
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -i|--input)    IN="$2"; shift 2 ;;
         -o|--outdir)   OUT="$2"; shift 2 ;;
         -t|--threads)  THREADS="$2"; shift 2 ;;
         --r1-tag)      R1TAG="$2"; shift 2 ;;
+        --single-end)  SINGLE=1; shift ;;
         --fastqc)      FASTQC=1; shift ;;
         --fastp-args)  FASTP_ARGS="$2"; shift 2 ;;
         --force)       FORCE=1; shift ;;
@@ -85,7 +92,9 @@ ext_of() { for e in $EXTS; do [[ "$1" == *"$e" ]] && { echo "$e"; return; }; don
 mate_tag() { case "$1" in *R1_001) echo "${1%R1_001}R2_001" ;; *R1) echo "${1%R1}R2" ;; *1) echo "${1%1}2" ;; esac; }
 
 # Auto-detect the read-1 tag: the first of these that matches any file.
-if [[ -z "$R1TAG" ]]; then
+if [[ $SINGLE -eq 1 ]]; then
+    R1TAG=""                                      # --single-end: no pairing at all
+elif [[ -z "$R1TAG" ]]; then
     for t in _R1_001 _R1 _1; do
         for f in "${all[@]}"; do
             e=$(ext_of "$f"); b=$(basename "$f" "$e")
@@ -113,9 +122,39 @@ for f in "${all[@]}"; do
 done
 [[ ${#samples[@]} -gt 0 ]] || die "could not find any samples in $IN"
 
+# Check that each pair really is read 1 + read 2 of one library: mates carry
+# the same read names (first word of the header, ignoring a /1 or /2 suffix).
+read_ids() {
+    { case "$1" in *.gz) gzip -dc "$1" ;; *) cat "$1" ;; esac; } 2>/dev/null \
+        | head -n 20 | awk 'NR % 4 == 1 { id = $1; sub(/^@/, "", id); sub(/\/[12]$/, "", id); print id }' || true
+}
+checked=() not_pairs=()
+for s in "${samples[@]}"; do
+    IFS=$'\t' read -r name r1 r2 <<<"$s"
+    if [[ -n "$r2" && "$(read_ids "$r1")" != "$(read_ids "$r2")" ]]; then
+        for f in "$r1" "$r2"; do
+            checked+=("$(basename "$f" "$(ext_of "$f")")"$'\t'"$f"$'\t')
+        done
+        not_pairs+=("$(basename "$r1") + $(basename "$r2")")
+    else
+        checked+=("$s")
+    fi
+done
+samples=("${checked[@]}")
+if [[ ${#not_pairs[@]} -gt 0 ]]; then
+    {
+        echo "NOTE: these files look like pairs by name, but their read names differ, so"
+        echo "      they are NOT read 1 + read 2 of one sample. Each is trimmed as its own"
+        echo "      single-end sample (typical for replicates named Ctrl_1 / Ctrl_2):"
+        printf '        %s\n' "${not_pairs[@]}"
+    } >&2
+fi
+
 n_pe=0; n_se=0
 for s in "${samples[@]}"; do [[ -n "$(cut -f3 <<<"$s")" ]] && n_pe=$((n_pe+1)) || n_se=$((n_se+1)); done
-echo "Found ${#samples[@]} sample(s) in $IN: $n_pe paired-end, $n_se single-end (read-1 tag: ${R1TAG:-none})" >&2
+tag_info="read-1 tag: ${R1TAG:-none}"
+[[ $SINGLE -eq 1 ]] && tag_info="--single-end"
+echo "Found ${#samples[@]} sample(s) in $IN: $n_pe paired-end, $n_se single-end ($tag_info)" >&2
 for s in "${samples[@]}"; do
     IFS=$'\t' read -r name r1 r2 <<<"$s"
     printf '  %-30s %s%s\n' "$name" "$(basename "$r1")" "${r2:+  +  $(basename "$r2")}" >&2
@@ -217,5 +256,23 @@ echo >&2
 echo "Summary (also in $OUT/fastp_summary.tsv):" >&2
 column -t -s $'\t' "$OUT/fastp_summary.tsv" >&2 || cat "$OUT/fastp_summary.tsv" >&2
 echo >&2
+# fastp finds adapters in single-end reads by looking for them; if it found
+# none, the reads were only quality-trimmed. Say so, with the fix.
+no_adapter=()
+for s in "${samples[@]}"; do
+    IFS=$'\t' read -r name r1 r2 <<<"$s"
+    [[ -z "$r2" ]] || continue
+    grep -q "No adapter detected" "$OUT/reports/${name}.fastp.log" 2>/dev/null && no_adapter+=("$name")
+done
+if [[ ${#no_adapter[@]} -gt 0 ]]; then
+    {
+        echo "WARNING: fastp found no adapter in these single-end samples, so no adapter was cut:"
+        printf '  %s\n' "${no_adapter[@]}"
+        echo "  If the library has adapters (most Illumina RNA-seq does), re-run with the adapter given:"
+        echo "    --force --fastp-args \"--adapter_sequence AGATCGGAAGAGC\"   (start of the Illumina TruSeq adapter; check your library kit)"
+        echo
+    } >&2
+fi
+
 echo "Trimmed reads : $OUT/trimmed/" >&2
 echo "QC report     : $OUT/multiqc/multiqc_report.html  (open in a web browser)" >&2
