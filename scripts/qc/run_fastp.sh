@@ -24,6 +24,8 @@
 #                      report already covers the usual checks)
 #       --fastp-args "ARGS"   extra fastp options, e.g. "--detect_adapter_for_pe"
 #       --force        re-run samples whose trimmed files already exist
+#       --force-sc     trim even if the reads look like single-cell data
+#                      (see NOTE below; almost never what you want)
 #   -h, --help         show this help
 #
 # File names it understands (sample name = everything before the tag):
@@ -40,13 +42,16 @@
 #
 # NOTE: for droplet single-cell RNA-seq (10x Genomics etc.) do NOT trim.
 #   Read 1 holds the cell barcode + UMI; `kb count` needs the raw FASTQs.
+#   The script checks this: if read 1 of a paired sample is short (<= 30 bp)
+#   while read 2 is at least twice as long, which is the layout of 10x-style
+#   barcode + cDNA reads, it stops before trimming anything.
 # =============================================================================
 set -euo pipefail
 
 usage() { awk 'NR>2 && /^# ====/{exit} NR>2{sub(/^# ?/,""); print}' "$0"; exit "${1:-0}"; }
 die()   { echo "ERROR: $*" >&2; exit 1; }
 
-IN="" OUT="" THREADS=8 R1TAG="" FASTQC=0 FASTP_ARGS="" FORCE=0
+IN="" OUT="" THREADS=8 R1TAG="" FASTQC=0 FASTP_ARGS="" FORCE=0 FORCE_SC=0
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -i|--input)    IN="$2"; shift 2 ;;
@@ -56,6 +61,7 @@ while [[ $# -gt 0 ]]; do
         --fastqc)      FASTQC=1; shift ;;
         --fastp-args)  FASTP_ARGS="$2"; shift 2 ;;
         --force)       FORCE=1; shift ;;
+        --force-sc)    FORCE_SC=1; shift ;;
         -h|--help)     usage 0 ;;
         *) echo "Unknown option: $1" >&2; usage 1 ;;
     esac
@@ -114,6 +120,38 @@ for s in "${samples[@]}"; do
     IFS=$'\t' read -r name r1 r2 <<<"$s"
     printf '  %-30s %s%s\n' "$name" "$(basename "$r1")" "${r2:+  +  $(basename "$r2")}" >&2
 done
+
+# ------------------- refuse droplet single-cell reads ------------------------
+# Longest read among the first 2,000 reads of a FASTQ (gzip or plain).
+max_len() {
+    { case "$1" in *.gz) gzip -dc "$1" ;; *) cat "$1" ;; esac; } 2>/dev/null \
+        | head -n 8000 | awk 'NR % 4 == 2 { if (length($0) > m) m = length($0) } END { print m + 0 }' || true
+}
+sc_like=()
+for s in "${samples[@]}"; do
+    IFS=$'\t' read -r name r1 r2 <<<"$s"
+    [[ -n "$r2" ]] || continue
+    l1=$(max_len "$r1"); l2=$(max_len "$r2")
+    if (( l1 > 0 && l1 <= 30 && l2 >= 2 * l1 )); then
+        sc_like+=("$name (read 1: ${l1} bp, read 2: ${l2} bp)")
+    fi
+done
+if [[ ${#sc_like[@]} -gt 0 ]]; then
+    {
+        echo
+        echo "These samples look like droplet single-cell RNA-seq (10x Genomics, Drop-seq, ...):"
+        printf '  %s\n' "${sc_like[@]}"
+        echo "Read 1 is short because it holds the cell barcode + UMI. Trimming would break"
+        echo "the barcodes, so single-cell reads must NOT be trimmed: give the raw FASTQ"
+        echo "files straight to 'kb count' (see docs/03_qc_trimming.md)."
+        echo
+    } >&2
+    if [[ $FORCE_SC -eq 1 ]]; then
+        echo "WARNING: --force-sc given, trimming them anyway" >&2
+    else
+        die "stopped before trimming. If these really are bulk reads, re-run with --force-sc"
+    fi
+fi
 
 # ----------------------------- optional FastQC -------------------------------
 if [[ $FASTQC -eq 1 ]]; then

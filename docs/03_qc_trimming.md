@@ -11,6 +11,9 @@ bash scripts/qc/run_fastp.sh --input /path/to/fastq_folder --outdir /path/to/01_
 > **Single-cell RNA-seq (10x Genomics, Drop-seq, ...): skip this step.**
 > In droplet data, read 1 holds the cell barcode and UMI. Trimming it
 > breaks the barcodes. `kb count` takes the raw FASTQ files directly.
+> As a safety net, the script recognises this layout (a short read 1 of
+> ≤ 30 bp with a read 2 at least twice as long) and stops before trimming
+> anything.
 
 ---
 
@@ -213,6 +216,7 @@ Worth looking at:
 | You see | Likely cause | What to do |
 |---------|--------------|------------|
 | `no FASTQ files ... in` | wrong folder, or files are not `.fq.gz` / `.fastq.gz` / `.fq` / `.fastq` | check the path with `ls` |
+| `These samples look like droplet single-cell RNA-seq` ... `stopped before trimming` | read 1 is ≤ 30 bp and read 2 much longer: the barcode + cDNA layout of 10x / Drop-seq data | single-cell data: don't trim, use the raw files with `kb count`. If they really are bulk reads with a short read 1, re-run with `--force-sc` |
 | Pairs listed as two single-end samples | read 1 / read 2 are named differently than expected | tell the script the read-1 tag, e.g. `--r1-tag _read1` (read 2 must then be `_read2`) |
 | `percent_kept` far below 90% in one sample | low-quality or failed library | look at that sample's "Filtered Reads" and quality plots; ask the sequencing core |
 | `adapter_trimmed_reads` is 0 for **single-end** data | fastp could not detect the adapter automatically | give it explicitly: `--fastp-args "--adapter_sequence AGATCGGAAGAGC"` (standard Illumina TruSeq adapter start) |

@@ -21,11 +21,13 @@ flowchart LR
     G["Genome + gene GTF"] --> R{{"build_index.sh"}}
     T["TE consensus sequences<br/>(RepBase / Dfam / de novo)"] --> R
     R --> I["kallisto index<br/>genes + TEs"]
-    F["FASTQ"] --> P["fastp<br/>(trim / QC)"]
-    P --> Q{{"kallisto / kb count"}}
-    I --> Q
-    Q --> B["Bulk: gene + TE counts"]
-    Q --> S["scRNA-seq: cell × (gene + TE) matrix"]
+    FB["Bulk RNA-seq FASTQ"] --> P["fastp<br/>(trim / QC)"]
+    P --> QB{{"kallisto quant / kb count"}}
+    FS["Single-cell FASTQ<br/>(raw, NOT trimmed)"] --> QS{{"kb count"}}
+    I --> QB
+    I --> QS
+    QB --> B["Bulk: gene + TE counts"]
+    QS --> S["scRNA-seq: cell × (gene + TE) matrix"]
 ```
 
 ---
