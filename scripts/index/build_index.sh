@@ -46,7 +46,8 @@
 # Options:
 #   -n, --name         prefix for output files (default: species name)
 #   -t, --threads      threads for kb ref (default: 8)
-#   -d, --d-list       none | genome  (default: none; see docs/01_build_index.md)
+#   -d, --d-list       genome | none  (default: genome, the kb-python default;
+#                      see docs/01_build_index.md)
 #       --tmp          temporary directory for kb ref (must NOT exist yet;
 #                      default: OUTDIR/tmp_kb_<pid>)
 #   -h, --help         show this help
@@ -66,7 +67,7 @@ die()   { echo "ERROR: $*" >&2; exit 1; }
 
 # ------------------------------- arguments ----------------------------------
 SPECIES="" OUTDIR="" REPBASE="" TE_LIBS="" GENOME="" GTF="" NAME=""
-THREADS=8 DLIST="none" TMPDIR_KB=""
+THREADS=8 DLIST="genome" TMPDIR_KB=""
 TE_FASTAS=()
 
 while [[ $# -gt 0 ]]; do

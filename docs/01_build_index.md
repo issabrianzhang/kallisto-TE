@@ -266,7 +266,6 @@ The script also checks that no TE name clashes with a chromosome name.
 ```bash
 kb ref --verbose --overwrite -t 16 \
     --tmp /path/to/a/new/tmp_dir \
-    --d-list None \
     -i  index/mm10_genes_TE.idx \
     -g  index/t2g.txt \
     -f1 index/cdna.fa \
@@ -275,8 +274,9 @@ kb ref --verbose --overwrite -t 16 \
 ```
 
 `kb ref` extracts all transcript sequences (`cdna.fa`), writes `t2g.txt` and
-builds the kallisto index (k = 31). `--tmp` must point to a folder that
-does **not** exist yet.
+builds the kallisto index (k = 31). By default it also uses the genome
+FASTA as a D-list (see [§8](#8-options-and-choices)). `--tmp` must point to
+a folder that does **not** exist yet.
 
 ---
 
@@ -343,19 +343,30 @@ For quantification you need **`index/*.idx`** and **`index/t2g.txt`**.
 | `--genome`, `--gtf` | GENCODE (presets) | Your own genome FASTA / GTF (`.gz` OK) |
 | `--name` | species | Prefix for output files. Include versions, e.g. `mm10_GencodeM25_RepBase25.05` |
 | `--threads` | 8 | Threads for `kb ref` |
-| `--d-list` | `none` | `none` or `genome` (see below) |
+| `--d-list` | `genome` | `genome` or `none` (see below) |
 | `--tmp` | `<outdir>/tmp_kb_<pid>` | Temporary folder for `kb ref`; must not exist yet |
 
-**`--d-list none` vs `genome`.** kb-python ≥ 0.28 (kallisto ≥ 0.50) can
-use a "D-list": by default the whole genome. Reads that contain k-mers
-found in the genome but not in any target are then discarded instead of
-being assigned. That is useful for genes, because it stops intronic or
-intergenic reads from being counted as mRNA. TE reads, however, mostly come
-from genomic copies that differ a little from the consensus, so a D-list can
-discard some genuine TE reads. Our default is `none`. This matches the
-published consensus-level approach and indices built with older kb-python
-versions, which had no D-list. If you choose `genome`, use the same index for
-all samples you compare and note it in your methods.
+**`--d-list genome` vs `none`.** kb-python ≥ 0.28 (kallisto ≥ 0.50) can
+use a "D-list": by default the whole genome FASTA (here including the TE
+consensus sequences). Reads that contain k-mers found in the genome but not
+in any target are discarded instead of being assigned to a transcript they
+only partly match. This stops intronic or intergenic reads from being
+counted as mRNA.
+
+* **`genome` (default)** is kb-python's own default and is what we used for
+  our mouse index (mm10, GENCODE M25, RepBase 25.05). Rebuilding that index
+  with these scripts gives identical files and identical counts.
+* **`none`** builds the index from the transcripts and TE consensus
+  sequences only, as kb-python < 0.28 always did. Use it to reproduce an
+  index built with an older kb-python. TE reads mostly come from genomic
+  copies that differ a little from the consensus, so a D-list may discard
+  some of them. `none` keeps those reads, at the cost of letting more
+  intronic or intergenic reads through.
+
+Whichever you choose, use the same index for every sample you compare, and
+state the setting in your methods (it is recorded in `build_info.txt`).
+`kallisto inspect index.idx` shows `number of D-list k-mers` when a D-list
+was used.
 
 **Versions matter.** Record the genome build, annotation release, RepBase
 release and `kb --version` (all are written to `build_info.txt`). Build and
