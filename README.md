@@ -51,7 +51,7 @@ bash test/run_toy_test.sh
 |-------|------|------------|
 | Genome | `--genome` | Genome FASTA (`.fa` or `.fa.gz`), e.g. `GRCm38.primary_assembly.genome.fa.gz` |
 | Gene annotation | `--gtf` | GTF matching that genome (`.gtf` or `.gtf.gz`), e.g. `gencode.vM25.primary_assembly.annotation.gtf.gz` |
-| TE consensus sequences | `--dfam`, `--repbase` or `--te-fasta` | Bundled open-access [Dfam libraries](te_libraries/dfam/) (no download needed), a RepBase archive from [girinst.org](https://www.girinst.org/repbase/), or any TE consensus FASTA |
+| TE consensus sequences | `--repbase`, `--te-fasta` or `--dfam` | A RepBase archive from [girinst.org](https://www.girinst.org/repbase/), any TE consensus FASTA, or the bundled open-access [Dfam libraries](te_libraries/dfam/) (Option D) |
 
 You do **not** supply a transcriptome FASTA. `kb ref` builds the
 transcriptome from the genome + GTF, so genes and TEs are extracted the same
@@ -60,20 +60,8 @@ way.
 **Option A: mouse or human, files downloaded for you.** With
 `--species mouse` or `--species human`, leave out `--genome` and `--gtf`. The
 script downloads the GENCODE genome and GTF listed under
-[Ready-made presets](#ready-made-presets) into `<outdir>/reference/`. For the
-TE library, either use the bundled Dfam library (no registration, works
-straight after cloning):
-
-```bash
-bash scripts/index/build_index.sh \
-    --species mouse \
-    --dfam \
-    --name    mm10_GencodeM25_Dfam4.0 \
-    --outdir  /path/to/references/mm10_Dfam_TE \
-    --threads 16
-```
-
-or RepBase, which we used for our own mouse and human indices:
+[Ready-made presets](#ready-made-presets) into `<outdir>/reference/`. You only
+provide RepBase, which we used for our own mouse and human indices:
 
 ```bash
 bash scripts/index/build_index.sh \
@@ -83,9 +71,6 @@ bash scripts/index/build_index.sh \
     --outdir  /path/to/references/mm10_TE \
     --threads 16
 ```
-
-Dfam and RepBase use different TE names and family sets, so pick one per
-project (see [te_libraries/dfam](te_libraries/dfam/README.md)).
 
 **Option B: your own genome and GTF.** Pass `--genome` and `--gtf`, and
 nothing is downloaded. Use this for another genome build or annotation
@@ -117,6 +102,41 @@ bash scripts/index/build_index.sh \
     --outdir   /path/to/references/TAIR10_TE \
     --threads 8
 ```
+
+**Option D: no RepBase, use the bundled Dfam libraries.** The repository
+ships open-access Dfam 4.0 TE libraries (CC0) in
+[`te_libraries/dfam/`](te_libraries/dfam/README.md), so you can build an
+index straight after cloning, with nothing to register for or download. For
+mouse or human, swap `--repbase` for `--dfam` (combine it with Option A or B
+for the genome and GTF):
+
+```bash
+bash scripts/index/build_index.sh \
+    --species mouse \
+    --dfam \
+    --name    mm10_GencodeM25_Dfam4.0 \
+    --outdir  /path/to/references/mm10_Dfam_TE \
+    --threads 16
+```
+
+For zebrafish, fly, worm or *Arabidopsis*, pass the bundled file with
+`--species custom` (as in Option C):
+
+```bash
+bash scripts/index/build_index.sh \
+    --species custom \
+    --genome   /path/to/Danio_rerio.GRCz11.dna.primary_assembly.fa.gz \
+    --gtf      /path/to/Danio_rerio.GRCz11.<ensembl_release>.gtf.gz \
+    --te-fasta te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz \
+    --name     GRCz11_Dfam4.0 \
+    --outdir   /path/to/references/GRCz11_Dfam_TE \
+    --threads 8
+```
+
+For any other species in Dfam, download its library first with
+`python3 scripts/te_libraries/fetch_dfam.py --species "Rattus norvegicus" --out rat_Dfam4.0_curated`.
+Dfam and RepBase use different TE names and family sets, so pick one library
+per project (see [te_libraries/dfam](te_libraries/dfam/README.md)).
 
 Output used for quantification: `index/<name>_genes_TE.idx` and
 `index/t2g.txt`. TEs are the `t2g.txt` rows whose gene name starts with
