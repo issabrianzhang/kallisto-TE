@@ -142,6 +142,30 @@ Output used for quantification: `index/<name>_genes_TE.idx` and
 `index/t2g.txt`. TEs are the `t2g.txt` rows whose gene name starts with
 `TE:`.
 
+### 4. Trim and check your reads (bulk RNA-seq)
+
+Put the raw FASTQ files of one experiment in one folder (paired-end
+`Sample_R1.fq.gz` + `Sample_R2.fq.gz`, Illumina `_R1_001.fastq.gz`, SRA
+`_1.fastq.gz`, or single-end files), then:
+
+```bash
+bash scripts/qc/run_fastp.sh \
+    --input   /path/to/project/00_fastq \
+    --outdir  /path/to/project/01_trimmed \
+    --threads 8
+```
+
+The script trims every sample with [fastp](https://github.com/OpenGene/fastp)
+(default settings), writes one QC report per sample, combines them into
+`01_trimmed/multiqc/multiqc_report.html` (open it in a browser), and prints a
+summary table. The trimmed reads in `01_trimmed/trimmed/` are the input for
+quantification. New to this? The [step-by-step guide](docs/03_qc_trimming.md)
+explains every output and what "normal" looks like. On a cluster, use
+[`slurm/run_fastp.sbatch`](slurm/run_fastp.sbatch).
+
+> **Single-cell RNA-seq: skip trimming.** Read 1 holds the cell barcode and
+> UMI, and `kb count` takes the raw FASTQ files.
+
 ---
 
 ## Tutorial
@@ -151,7 +175,7 @@ Output used for quantification: `index/<name>_genes_TE.idx` and
 | 0 | Install (`envs/kallisto_te.yaml`) and run the toy test | ✅ |
 | 1 | [Build a genes + TE index: mouse and human](docs/01_build_index.md) | ✅ |
 | 1b | [Build an index for your own species (worked example: *Arabidopsis*)](docs/02_custom_species.md) | ✅ |
-| 2 | Read trimming and QC with fastp | 🚧 coming soon |
+| 2 | [Trim and check your reads with fastp + MultiQC (bulk RNA-seq)](docs/03_qc_trimming.md) | ✅ |
 | 3 | Bulk RNA-seq quantification | 🚧 coming soon |
 | 4 | Single-cell RNA-seq quantification (`kb count`) | 🚧 coming soon |
 | 5 | Snakemake pipeline (steps 1–4 in one command) | 🚧 coming soon |
@@ -180,11 +204,14 @@ in Dfam.
 kallisto-TE/
 ├── README.md
 ├── envs/
-│   └── kallisto_te.yaml               # conda environment (kb-python, samtools)
+│   └── kallisto_te.yaml               # conda environment (kb-python, fastp, MultiQC, samtools)
 ├── docs/
 │   ├── 01_build_index.md              # step-by-step: mouse & human index
-│   └── 02_custom_species.md           # step-by-step: any species (Arabidopsis example)
+│   ├── 02_custom_species.md           # step-by-step: any species (Arabidopsis example)
+│   └── 03_qc_trimming.md              # step-by-step: trim + QC reads (beginner friendly)
 ├── scripts/
+│   ├── qc/
+│   │   └── run_fastp.sh               # trim every sample with fastp, one MultiQC report
 │   ├── index/
 │   │   ├── build_index.sh             # one command: TE library -> pseudo-GTF -> kb ref -> check
 │   │   ├── prepare_te_library.sh      # merge, clean names, de-duplicate TE consensus FASTA
@@ -200,7 +227,8 @@ kallisto-TE/
 ├── slurm/                             # example SLURM jobs (edit paths and partition)
 │   ├── build_index_mouse_mm10.sbatch
 │   ├── build_index_human_hg38.sbatch
-│   └── build_index_custom_species.sbatch
+│   ├── build_index_custom_species.sbatch
+│   └── run_fastp.sbatch
 └── test/
     └── run_toy_test.sh                # tiny end-to-end test
 ```
