@@ -38,7 +38,7 @@ flowchart LR
 
 ```bash
 # 1. Get the code and the software
-git clone https://github.com/issabrianzhang/kallisto-TE.git
+git clone https://github.com/itsbrianzhang/kallisto-TE.git
 cd kallisto-TE
 mamba env create -f envs/kallisto_te.yaml      # or: conda env create -f envs/kallisto_te.yaml
 conda activate kallisto_te
