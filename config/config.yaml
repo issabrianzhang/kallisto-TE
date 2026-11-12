@@ -1,0 +1,80 @@
+# =============================================================================
+# kallisto-TE pipeline settings (step 5: docs/06_snakemake.md)
+#
+# Copy this file next to your data, edit it, and run from the repository:
+#   snakemake --cores 8 --configfile /path/to/my_project.yaml
+# Anything you leave out of your copy keeps the value below.
+#
+# Relative paths are relative to the folder you run snakemake from.
+# =============================================================================
+
+# Where all results go (created if needed):
+#   <outdir>/reference/    index built in step 1 (unless you use an existing one)
+#   <outdir>/01_trimmed/   bulk reads after fastp (step 2)
+#   <outdir>/02_quant/     bulk kallisto results (step 3)
+#   <outdir>/03_kb_count/  single-cell count matrices (step 4)
+#   <outdir>/logs/         one log per step
+outdir: results
+
+# ----------------------------------------------------------------------------
+# Step 1: the genes + TE index (docs/01_build_index.md, docs/02_custom_species.md)
+# ----------------------------------------------------------------------------
+index:
+  # Already have an index? Give its .idx file and the rest of this section is
+  # ignored. t2g.txt is looked for next to it unless you give existing_t2g.
+  existing_index: ""
+  existing_t2g: ""
+
+  # Otherwise, build one:
+  species: mouse            # mouse | human | custom
+  name: mm10_GencodeM25_Dfam4.0   # prefix for the index file
+
+  # TE library: the bundled Dfam library (mouse / human only), a RepBase
+  # archive, and/or your own TE consensus FASTA files.
+  dfam: true
+  repbase: ""               # e.g. /path/to/RepBase25.05.fasta.tar.gz
+  repbase_libs: ""          # RepBase .ref files; empty = preset default
+  te_fasta: []              # e.g. ["te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz"]
+
+  # Genome + GTF: required for custom; for mouse / human leave empty to
+  # download the GENCODE files of the preset.
+  genome: ""
+  gtf: ""
+  d_list: genome            # genome (default) | none
+
+# ----------------------------------------------------------------------------
+# Steps 2-3: bulk RNA-seq (docs/03_qc_trimming.md, docs/04_bulk_kallisto_quant.md)
+# Leave fastq_dir empty to skip.
+# ----------------------------------------------------------------------------
+bulk:
+  fastq_dir: ""             # folder with the raw FASTQ files
+  trim: true                # run fastp first (step 2); false = quantify the raw reads
+  single_end: false         # true = every file is its own single-end sample
+  fastp_args: ""            # extra fastp options, e.g. "--adapter_sequence AGATCGGAAGAGC"
+  strand: auto              # auto | rf | fr | unstranded
+  fragment_length: 200      # single-end reads only
+  fragment_sd: 20           # single-end reads only
+  bootstraps: 30            # 0 is fine if you only use DESeq2
+
+# ----------------------------------------------------------------------------
+# Step 4: droplet single-cell RNA-seq (docs/05_singlecell_kb_count.md)
+# Raw reads only: single-cell reads are never trimmed. Leave fastq_dir empty
+# to skip.
+# ----------------------------------------------------------------------------
+singlecell:
+  fastq_dir: ""             # folder with the raw FASTQ files (R1 + R2 of every lane)
+  tech: 10xv3               # 10xv2 | 10xv3 | 10xv4 | ... (kb --list)
+  memory: 16G               # memory kb may use for sorting barcodes
+  filter: false             # also write counts_filtered/ (bustools knee filter)
+  h5ad: false               # also write an AnnData .h5ad file
+
+# ----------------------------------------------------------------------------
+# Threads, memory (MB) and time limit (minutes) per step. Used on a cluster
+# (--profile profiles/slurm); on one computer only threads matter, capped by
+# --cores.
+# ----------------------------------------------------------------------------
+resources:
+  build_index: {threads: 16, mem_mb: 64000,  runtime: 1440}
+  trim_bulk:   {threads: 8,  mem_mb: 16000,  runtime: 720}
+  quant_bulk:  {threads: 16, mem_mb: 32000,  runtime: 1440}
+  kb_count:    {threads: 16, mem_mb: 128000, runtime: 1440}
