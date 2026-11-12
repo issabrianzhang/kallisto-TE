@@ -55,8 +55,9 @@ For each sample kallisto reports, per transcript and per TE:
 | `tpm` | transcripts per million: expression corrected for length and sequencing depth; use it to compare genes *within* a sample |
 | `length` / `eff_length` | sequence length, and the length usable by fragments |
 
-The script then adds up the transcripts of each gene, so you get one row per
-gene and one row per TE subfamily.
+Each TE subfamily is one row of its own. In R, tximport adds up the
+transcripts of each gene (section 7), giving one row per gene and one row per
+TE subfamily.
 
 ## 2. What you need
 
@@ -64,7 +65,7 @@ gene and one row per TE subfamily.
 |------|---------------------|
 | Reads | `01_trimmed/trimmed/` from [step 2](03_qc_trimming.md). Raw FASTQ files also work |
 | Index | `<outdir>/index/<name>_genes_TE.idx` from [step 1](01_build_index.md) |
-| `t2g.txt` | the transcript-to-gene table, found automatically next to the index |
+| `t2g.txt` | the transcript-to-gene table next to the index; used in R (section 7) |
 | Software | the `kallisto_te` conda environment (same kb-python version that built the index) |
 
 Use **one index for every sample of a project**. Counts from different
@@ -186,10 +187,6 @@ Index-read files (`*_I1_001.fastq.gz`, `*_I2_001.fastq.gz`) are ignored. Use
 │   ├── abundance.h5             # the same + bootstraps (for sleuth)
 │   └── run_info.json            # reads processed / pseudoaligned
 ├── Ctrl_Rep2/ ...
-├── matrices/
-│   ├── gene_TE_counts.tsv       # ← one row per gene or TE, one column per sample
-│   ├── gene_TE_tpm.tsv          #   the same, in TPM
-│   └── TE_counts.tsv            #   only the TE rows
 ├── quant_summary.tsv            # ← one line per sample (also printed at the end)
 ├── samples_used.tsv             # which files went into which sample, layout, strand
 ├── strand_check/result.txt      # the strandedness test (with --strand auto)
@@ -197,18 +194,11 @@ Index-read files (`*_I1_001.fastq.gz`, `*_I2_001.fastq.gz`) are ignored. Use
 └── multiqc/multiqc_report.html  # pseudoalignment rates of all samples in one page
 ```
 
-The tables open in Excel, R or Python. Each row of `gene_TE_counts.tsv` is
-labelled `gene` or `TE` in the `type` column:
-
-```
-gene_id                      gene_name                       type  Ctrl_Rep1  Ctrl_Rep2  KO_Rep1
-ENSMUSG00000057666.18        Gapdh                           gene  51234.000  49876.000  50311.000
-MMERVK10C_ERV2_Mus_musculus  TE:MMERVK10C_ERV2_Mus_musculus  TE    812.000    790.512    4410.000
-```
-
-(numbers made up for illustration). A TE's ID is its name in the TE library:
-`NAME_CLASS_Species` for RepBase, `NAME_Type-Subtype` for the bundled Dfam
-libraries (e.g. `MMERVK10C_LTR-ERVK`).
+In `abundance.tsv` a TE's `target_id` is its name in the TE library:
+`NAME_CLASS_Species` for RepBase (e.g. `MMERVK10C_ERV2_Mus_musculus`),
+`NAME_Type-Subtype` for the bundled Dfam libraries (e.g.
+`MMERVK10C_LTR-ERVK`). In `t2g.txt` its gene name has a `TE:` prefix, which
+is how the R code in section 7 labels genes and TEs.
 
 Don't be surprised by species names other than yours. RepBase lists each
 consensus under the species it was described in, and the mouse preset
@@ -226,16 +216,9 @@ best.
 |--------|---------|------------------|
 | `reads_processed` | reads (or read pairs) kallisto saw | should match the "reads after" column of step 2 (halved for pairs) |
 | `percent_pseudoaligned` | % that matched a gene or TE | often 60–90% for poly(A) mRNA-seq, lower for total RNA (intronic reads). Similar across samples is what matters |
-| `TE_reads` / `percent_TE` | estimated reads assigned to TE subfamilies, and their % of all assigned reads | varies with species, tissue and library type; compare samples with each other, not with a fixed number |
 
 The script warns about samples under 30% pseudoaligned. The most common
 reasons are listed in [section 8](#8-if-something-looks-wrong).
-
-Quick look at the most highly expressed TEs of the first sample:
-
-```bash
-sort -t $'\t' -k4,4gr 02_quant/matrices/TE_counts.tsv | head -20 | cut -f2,4-
-```
 
 ## 7. Next: differential expression with DESeq2
 
@@ -243,9 +226,9 @@ This tutorial stops at the count tables. For differential expression we
 recommend [DESeq2](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html),
 reading kallisto's per-sample files with
 [tximport](https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html).
-tximport keeps kallisto's length information, which is more accurate than
-rounding `gene_TE_counts.tsv`. Genes and TEs go into DESeq2 together, so they
-are normalised the same way.
+tximport adds up the transcripts of each gene and keeps kallisto's length
+information. Genes and TEs go into DESeq2 together, so they are normalised the
+same way.
 
 Make a small sample sheet, `samples.tsv` (TAB-separated; the names must
 match the folders in `02_quant/`):
@@ -292,6 +275,19 @@ write.csv(as.data.frame(res), "DESeq2_KO_vs_Ctrl_genes_and_TEs.csv")
 write.csv(as.data.frame(res[res$type == "TE", ]), "DESeq2_KO_vs_Ctrl_TEs_only.csv")
 ```
 
+Prefer to pick up every sample folder instead of writing `samples.tsv`?
+List only folders that contain kallisto results, so `logs/`, `multiqc/` and
+`strand_check/` are skipped:
+
+```r
+files <- Sys.glob("02_quant/*/abundance.tsv")
+names(files) <- basename(dirname(files))
+```
+
+(`abundance.h5` works the same way with `type = "kallisto"`, but needs the
+rhdf5 package.) You still need a table of conditions, in the same order as
+`files`, for DESeq2.
+
 From here, follow the
 [DESeq2 vignette](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html)
 for quality plots (PCA, sample distances), shrunken fold changes and
@@ -315,7 +311,6 @@ locus.
 | kallisto log says the index is incompatible / cannot be read | index built with a different kallisto / kb-python version | use the `kallisto_te` environment for both steps (kb-python 0.30.2) |
 | `has both paired-end and single-end files` | a folder mixes layouts for one sample | put the files of each sample in their own folder |
 | two samples were combined that should not be | names differ only by the lane part (`_S1_L001`) or sit in the same per-sample folder | rename the files, or give each sample its own folder |
-| `targets ... are not in t2g.txt` | results from another index are in the output folder | use a fresh `--outdir` for each index |
 
 ## 9. For your methods section
 

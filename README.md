@@ -185,8 +185,8 @@ bash scripts/quant/run_kallisto_quant.sh \
 It works out the library strandedness from the first sample (or use
 `--strand rf|fr|unstranded`), handles paired-end and single-end samples
 (`-l 200 -s 20` fragment length for single-end), combines lanes, and writes
-per-sample kallisto results plus `matrices/gene_TE_counts.tsv` (one row per
-gene or TE). Guide: [docs/04_bulk_kallisto_quant.md](docs/04_bulk_kallisto_quant.md),
+kallisto's results per sample plus a short summary (% pseudoaligned). Load them
+into R with tximport for DESeq2. Guide: [docs/04_bulk_kallisto_quant.md](docs/04_bulk_kallisto_quant.md),
 cluster job: [`slurm/run_kallisto_quant.sbatch`](slurm/run_kallisto_quant.sbatch).
 
 **Single-cell RNA-seq**: the raw FASTQ files, the same index, and the
@@ -273,7 +273,6 @@ kallisto-TE/
 │   │   └── run_fastp.sh               # trim every sample with fastp, one MultiQC report
 │   ├── quant/
 │   │   ├── run_kallisto_quant.sh      # bulk: kallisto quant every sample, gene + TE tables
-│   │   ├── summarize_kallisto.py      # combine per-sample results into gene + TE tables
 │   │   └── run_kb_count.sh            # single-cell: kb count every sample
 │   ├── lib/
 │   │   └── fastq_pairs.sh             # shared: find FASTQ files, pair R1/R2, group lanes

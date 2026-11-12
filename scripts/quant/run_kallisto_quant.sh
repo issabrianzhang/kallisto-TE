@@ -7,8 +7,9 @@
 #      of one sample are combined)
 #   2. works out the library strandedness from the first sample (or uses --strand)
 #   3. runs kallisto quant against the genes + TEs index from step 1
-#   4. writes one table per sample, plus combined gene + TE count / TPM tables
-#      for all samples and a summary (reads used, % pseudoaligned, % from TEs)
+#   4. writes kallisto's results per sample, plus a summary (reads used and
+#      % pseudoaligned per sample). Load the results into R with tximport
+#      (docs/04_bulk_kallisto_quant.md, section 7).
 #
 # Usage:
 #   run_kallisto_quant.sh -i FASTQ_DIR --index INDEX.idx -o OUT_DIR [options]
@@ -20,7 +21,6 @@
 #   -o, --outdir       output folder (created if needed)
 #
 # Options:
-#       --t2g FILE     transcript-to-gene table (default: t2g.txt next to the index)
 #       --strand S     auto (default), unstranded, rf or fr  (see NOTE 1)
 #   -l, --fragment-length N   single-end only: mean fragment length (default 200)
 #   -s, --fragment-sd N       single-end only: its standard deviation (default 20)
@@ -40,9 +40,6 @@
 #   OUT_DIR/<sample>/abundance.tsv   per-target counts + TPM (genes' transcripts and TEs)
 #   OUT_DIR/<sample>/abundance.h5    the same + bootstraps (for sleuth)
 #   OUT_DIR/<sample>/run_info.json   reads processed / pseudoaligned
-#   OUT_DIR/matrices/gene_TE_counts.tsv  estimated counts, one row per gene or TE
-#   OUT_DIR/matrices/gene_TE_tpm.tsv     TPM,              one row per gene or TE
-#   OUT_DIR/matrices/TE_counts.tsv       the TE rows only
 #   OUT_DIR/quant_summary.tsv            one line per sample
 #   OUT_DIR/samples_used.tsv             which files went into which sample
 #
@@ -60,14 +57,13 @@ usage() { awk 'NR>2 && /^# ====/{exit} NR>2{sub(/^# ?/,""); print}' "$0"; exit "
 die()   { echo "ERROR: $*" >&2; exit 1; }
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-IN="" INDEX="" OUT="" T2G="" STRAND=auto FRAG_L=200 FRAG_S=20 BOOT=30 THREADS=8
+IN="" INDEX="" OUT="" STRAND=auto FRAG_L=200 FRAG_S=20 BOOT=30 THREADS=8
 R1TAG="" SINGLE=0 FORCE=0
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -i|--input)            IN="$2"; shift 2 ;;
         --index)               INDEX="$2"; shift 2 ;;
         -o|--outdir)           OUT="$2"; shift 2 ;;
-        --t2g)                 T2G="$2"; shift 2 ;;
         --strand)              STRAND="$2"; shift 2 ;;
         -l|--fragment-length)  FRAG_L="$2"; shift 2 ;;
         -s|--fragment-sd)      FRAG_S="$2"; shift 2 ;;
@@ -83,8 +79,6 @@ done
 [[ -n "$IN" && -n "$INDEX" && -n "$OUT" ]] || usage 1
 [[ -d "$IN" ]]    || die "input folder not found: $IN"
 [[ -s "$INDEX" ]] || die "index file not found: $INDEX (it is the .idx file in the index/ folder from step 1)"
-[[ -n "$T2G" ]] || T2G="$(dirname "$INDEX")/t2g.txt"
-[[ -s "$T2G" ]]   || die "t2g.txt not found next to the index; give it with --t2g FILE"
 case "$STRAND" in auto|unstranded|rf|fr) ;; *) die "--strand must be auto, unstranded, rf or fr" ;; esac
 command -v python3 >/dev/null 2>&1 || die "python3 not found. Activate the environment first: conda activate kallisto_te"
 
@@ -211,12 +205,26 @@ for ((i = 0; i < ${#S_NAME[@]}; i++)); do
     fi
     echo "  [kallisto quant] $name ($layout)" >&2
     rm -rf "${OUT:?}/$name"
-    run_kallisto "$OUT/$name" "$layout" "$SFLAG" -b "$BOOT" "${fa[@]}" > "$OUT/logs/$name.log" 2>&1 \
-        || die "kallisto quant failed for $name - see $OUT/logs/$name.log"
+    # kallisto also exits with an error when no read pseudoaligns; that sample
+    # is reported at 0% below. Only a missing run_info.json is a real failure.
+    run_kallisto "$OUT/$name" "$layout" "$SFLAG" -b "$BOOT" "${fa[@]}" > "$OUT/logs/$name.log" 2>&1 || true
+    [[ -s "$OUT/$name/run_info.json" ]] || die "kallisto quant failed for $name - see $OUT/logs/$name.log"
 done
 
-# ----------------------------- tables + summary ------------------------------
-python3 "$HERE/summarize_kallisto.py" "$OUT" "$T2G"
+# ----------------------------- summary ---------------------------------------
+# One line per sample, from kallisto's run_info.json.
+python3 - "$OUT" <<'EOF'
+import csv, json, sys
+out = sys.argv[1]
+with open(f"{out}/samples_used.tsv") as fh:
+    samples = list(csv.DictReader(fh, delimiter="\t"))
+with open(f"{out}/quant_summary.tsv", "w") as fh:
+    fh.write("sample\tlayout\tstrand\treads_processed\treads_pseudoaligned\tpercent_pseudoaligned\n")
+    for s in samples:
+        info = json.load(open(f"{out}/{s['sample']}/run_info.json"))
+        fh.write(f"{s['sample']}\t{s['layout']}\t{s['strand']}\t{info['n_processed']}"
+                 f"\t{info['n_pseudoaligned']}\t{info['p_pseudoaligned']:.1f}\n")
+EOF
 
 if command -v multiqc >/dev/null 2>&1; then
     multiqc -q -f -o "$OUT/multiqc" "$OUT/logs" > "$OUT/logs/multiqc.log" 2>&1 \
@@ -238,4 +246,4 @@ if [[ -n "$low" ]]; then
     } >&2
 fi
 echo "Per-sample results : $OUT/<sample>/abundance.tsv" >&2
-echo "Gene + TE counts   : $OUT/matrices/gene_TE_counts.tsv  (for DESeq2, use tximport - see the guide)" >&2
+echo "Next               : load them into R with tximport + DESeq2 (docs/04_bulk_kallisto_quant.md, section 7)" >&2
