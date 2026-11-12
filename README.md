@@ -219,6 +219,30 @@ unchanged. The guides above include tested starter code for:
   [scanpy](https://scanpy.readthedocs.io/en/stable/tutorials/basics/clustering.html)
   with `--h5ad`
 
+### 7. Or: index, trimming and counting in one command (Snakemake)
+
+Once you know the steps, run a whole project from one short settings file:
+
+```yaml
+# my_project.yaml
+outdir: /path/to/project/results
+index:
+  species: mouse
+  dfam: true
+bulk:
+  fastq_dir: /path/to/project/00_fastq
+```
+
+```bash
+bash test/run_pipeline_test.sh                          # once: checks the pipeline works
+snakemake --cores 8 --configfile my_project.yaml        # this computer
+snakemake --profile profiles/slurm --configfile my_project.yaml   # SLURM cluster
+```
+
+It builds the index (or uses an existing one), trims, quantifies bulk and/or
+single-cell data, resumes after interruptions and redoes steps whose settings
+changed. Guide: [docs/06_snakemake.md](docs/06_snakemake.md).
+
 ---
 
 ## Tutorial
@@ -231,7 +255,7 @@ unchanged. The guides above include tested starter code for:
 | 2 | [Trim and check your reads with fastp + MultiQC (bulk RNA-seq)](docs/03_qc_trimming.md) | ✅ |
 | 3 | [Count genes + TEs in bulk RNA-seq (`kallisto quant`), then DESeq2](docs/04_bulk_kallisto_quant.md) | ✅ |
 | 4 | [Count genes + TEs per cell in single-cell RNA-seq (`kb count`), then Seurat](docs/05_singlecell_kb_count.md) | ✅ |
-| 5 | Snakemake pipeline (steps 1–4 in one command) | 🚧 coming soon |
+| 5 | [Run steps 1–4 in one command with Snakemake (computer or SLURM)](docs/06_snakemake.md) | ✅ |
 
 Differential expression and single-cell analysis themselves are not
 covered; the guides end by loading the counts into DESeq2 and Seurat and
@@ -261,18 +285,25 @@ in Dfam.
 kallisto-TE/
 ├── README.md
 ├── envs/
-│   └── kallisto_te.yaml               # conda environment (kb-python, fastp, MultiQC, samtools)
+│   └── kallisto_te.yaml               # conda environment (kb-python, fastp, MultiQC, Snakemake)
+├── workflow/
+│   └── Snakefile                      # step 5: steps 1-4 in one command
+├── config/
+│   └── config.yaml                    # step 5: every pipeline setting, with comments
+├── profiles/
+│   └── slurm/config.yaml              # step 5: run the pipeline as SLURM jobs
 ├── docs/
 │   ├── 01_build_index.md              # step-by-step: mouse & human index
 │   ├── 02_custom_species.md           # step-by-step: any species (Arabidopsis example)
 │   ├── 03_qc_trimming.md              # step-by-step: trim + QC reads (beginner friendly)
 │   ├── 04_bulk_kallisto_quant.md      # step-by-step: bulk counts + DESeq2 starter code
-│   └── 05_singlecell_kb_count.md      # step-by-step: single-cell counts + Seurat starter code
+│   ├── 05_singlecell_kb_count.md      # step-by-step: single-cell counts + Seurat starter code
+│   └── 06_snakemake.md                # step 5: the whole pipeline in one command
 ├── scripts/
 │   ├── qc/
 │   │   └── run_fastp.sh               # trim every sample with fastp, one MultiQC report
 │   ├── quant/
-│   │   ├── run_kallisto_quant.sh      # bulk: kallisto quant every sample, gene + TE tables
+│   │   ├── run_kallisto_quant.sh      # bulk: kallisto quant every sample + summary
 │   │   └── run_kb_count.sh            # single-cell: kb count every sample
 │   ├── lib/
 │   │   └── fastq_pairs.sh             # shared: find FASTQ files, pair R1/R2, group lanes
@@ -296,7 +327,9 @@ kallisto-TE/
 │   ├── run_kallisto_quant.sbatch
 │   └── run_kb_count.sbatch
 └── test/
-    └── run_toy_test.sh                # tiny end-to-end test
+    ├── run_toy_test.sh                # tiny index-building test
+    ├── run_pipeline_test.sh           # tiny test of the whole Snakemake pipeline
+    └── simulate_toy_reads.py          # simulated reads for that test
 ```
 
 Each script prints its own help with `-h`, e.g.
@@ -328,6 +361,10 @@ pip install kb-python==0.30.2
 ```bash
 conda create -n kallisto_te -c conda-forge -c bioconda kb-python=0.30.2
 ```
+
+For the Snakemake pipeline (step 5), also install
+`snakemake-minimal=9.27.1` and `snakemake-executor-plugin-slurm=2.8.0`
+(both need Python 3.11 or newer).
 
 * **0.30.2 is the tested version.** Newer releases will probably work but
   have not been tested here.
@@ -366,6 +403,8 @@ approach and the tools it relies on:
   dispersion for RNA-seq data with DESeq2. *Genome Biol* 15, 550 (2014).
 * Hao Y, *et al.* Dictionary learning for integrative, multimodal and
   scalable single-cell analysis. *Nat Biotechnol* 42, 293–304 (2024). (Seurat v5)
+* Mölder F, *et al.* Sustainable data analysis with Snakemake.
+  *F1000Research* 10, 33 (2021). (if you use the pipeline)
 
 ## License
 

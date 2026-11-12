@@ -1,0 +1,17 @@
+# =============================================================================
+# Snakemake profile for SLURM clusters (docs/06_snakemake.md)
+#
+#   snakemake --profile profiles/slurm --configfile /path/to/my_project.yaml
+#
+# Each step becomes one SLURM job, sized by the "resources:" section of the
+# pipeline config. Run the command above from a login node inside tmux /
+# screen (or in a small SLURM job of its own): Snakemake keeps running to
+# submit the jobs and follow them.
+# =============================================================================
+executor: slurm
+jobs: 10                       # at most this many jobs queued at once
+latency-wait: 120              # seconds to wait for files on shared storage
+printshellcmds: true
+default-resources:
+  slurm_partition: "batch"     # EDIT: your cluster's partition (sinfo lists them)
+  # slurm_account: "mylab"     # EDIT: uncomment if your cluster requires an account

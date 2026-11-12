@@ -11,9 +11,11 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - python >=3.9
+  - python >=3.11
   - kb-python =0.30.2   # bundles kallisto 0.51.x and bustools
   - fastp =1.4.0        # read trimming + QC (step 2)
   - multiqc =1.35       # combines the fastp reports into one page (step 2)
+  - snakemake-minimal =9.27.1                # runs steps 1-4 in one command (step 5)
+  - snakemake-executor-plugin-slurm =2.8.0   # lets Snakemake submit SLURM jobs
   - samtools            # optional, handy for inspecting FASTA files
   - wget

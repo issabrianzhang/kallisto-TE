@@ -1,5 +1,7 @@
-# Outputs of the toy test
+# Outputs of the toy tests
 test/toy_out/
+test/pipeline_out/
+.snakemake/
 
 # Large reference / index files: never commit these
 *.fa

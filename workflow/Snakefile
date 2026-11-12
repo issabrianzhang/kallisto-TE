@@ -1,0 +1,239 @@
+# =============================================================================
+# kallisto-TE pipeline: steps 1-4 in one command (guide: docs/06_snakemake.md)
+#
+#   step 1  build the genes + TE index    scripts/index/build_index.sh
+#   step 2  trim bulk reads (fastp)        scripts/qc/run_fastp.sh
+#   step 3  quantify bulk (kallisto)       scripts/quant/run_kallisto_quant.sh
+#   step 4  count single-cell (kb count)   scripts/quant/run_kb_count.sh
+#
+# Each rule runs the same script you would run by hand, on a whole folder of
+# samples, so results are identical to the step-by-step guides.
+#
+# Run from the repository folder:
+#   snakemake --cores 8 --configfile /path/to/my_project.yaml          # this computer
+#   snakemake --profile profiles/slurm --configfile /path/to/my_project.yaml   # SLURM
+# Add -n to see what would run without running it.
+# =============================================================================
+import glob
+import json
+import os
+import shlex
+
+from snakemake.exceptions import WorkflowError
+
+REPO = os.path.normpath(os.path.join(workflow.basedir, ".."))
+SCRIPTS = os.path.join(REPO, "scripts")
+
+configfile: os.path.join(REPO, "config", "config.yaml")
+
+
+def fail(msg):
+    raise WorkflowError("kallisto-TE config: " + msg)
+
+
+def path_of(p, what):
+    """Absolute path of a file named in the config; also tries the repository
+    folder (for bundled files such as te_libraries/dfam/...)."""
+    for cand in (p, os.path.join(REPO, p)):
+        if os.path.exists(cand):
+            return os.path.abspath(cand)
+    fail(f"{what} not found: {p}")
+
+
+FASTQ_EXTS = (".fastq.gz", ".fq.gz", ".fastq", ".fq")
+
+
+def list_fastqs(folder, what):
+    """FASTQ files directly in folder, or else one level down (one sub-folder
+    per sample). Returns (files, in_subfolders)."""
+    if not os.path.isdir(folder):
+        fail(f"{what}.fastq_dir is not a folder: {folder}")
+    top = sorted(f for f in glob.glob(os.path.join(folder, "*")) if f.endswith(FASTQ_EXTS))
+    if top:
+        return top, False
+    sub = sorted(f for f in glob.glob(os.path.join(folder, "*", "*")) if f.endswith(FASTQ_EXTS))
+    if not sub:
+        fail(f"no FASTQ files (.fastq.gz/.fq.gz/.fastq/.fq) in {what}.fastq_dir: {folder}")
+    return sub, True
+
+
+def settings_check(step_dir, settings):
+    """Results are kept between runs, so an interrupted run resumes where it
+    stopped. If this step last ran with OTHER settings, redo every sample
+    (--force) so results never mix old and new settings."""
+    current = json.dumps(settings, sort_keys=True)
+    try:
+        with open(os.path.join(step_dir, "pipeline_settings.json")) as fh:
+            previous = fh.read().strip()
+    except OSError:
+        return current, ""
+    return current, ("--force" if previous != current else "")
+
+
+def res(step):
+    r = config["resources"][step]
+    return r["threads"], {"mem_mb": r["mem_mb"], "runtime": r["runtime"]}
+
+
+OUT = config["outdir"].rstrip("/") or "."
+LOGS = f"{OUT}/logs"
+targets = []
+
+# ----------------------------------------------------------------------------
+# Step 1: index
+# ----------------------------------------------------------------------------
+ic = config["index"]
+if ic.get("existing_index"):
+    INDEX = path_of(ic["existing_index"], "index.existing_index")
+    T2G = path_of(ic.get("existing_t2g") or os.path.join(os.path.dirname(INDEX), "t2g.txt"),
+                  "t2g.txt (set index.existing_t2g)")
+    INDEX_ID = {"existing_index": INDEX, "modified": os.path.getmtime(INDEX)}
+    BUILD_INDEX = False
+else:
+    if ic["species"] not in ("mouse", "human", "custom"):
+        fail("index.species must be mouse, human or custom")
+    if not (ic.get("dfam") or ic.get("repbase") or ic.get("te_fasta")):
+        fail("choose a TE library: index.dfam, index.repbase and/or index.te_fasta")
+    if ic.get("dfam") and ic["species"] == "custom":
+        fail("index.dfam is for mouse / human; for other species list a bundled "
+             "library under index.te_fasta, e.g. te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz")
+    if ic["species"] == "custom" and not (ic.get("genome") and ic.get("gtf")):
+        fail("species custom needs index.genome and index.gtf")
+    if ic.get("d_list", "genome") not in ("genome", "none"):
+        fail("index.d_list must be genome or none")
+    INDEX = f"{OUT}/reference/index/{ic['name']}_genes_TE.idx"
+    T2G = f"{OUT}/reference/index/t2g.txt"
+    INDEX_ID = {k: ic.get(k) for k in ("species", "name", "dfam", "repbase", "repbase_libs",
+                                       "te_fasta", "genome", "gtf", "d_list")}
+    BUILD_INDEX = True
+targets.append(INDEX)
+
+if BUILD_INDEX:
+    index_inputs, index_args = [], ["--species", ic["species"], "--name", ic["name"],
+                                    "--d-list", ic.get("d_list", "genome")]
+    if ic.get("dfam"):
+        index_args.append("--dfam")
+    if ic.get("repbase"):
+        index_inputs.append(path_of(ic["repbase"], "index.repbase"))
+        index_args += ["--repbase", index_inputs[-1]]
+    if ic.get("repbase_libs"):
+        index_args += ["--te-libs", ic["repbase_libs"]]
+    for f in ic.get("te_fasta") or []:
+        index_inputs.append(path_of(f, "index.te_fasta file"))
+        index_args += ["--te-fasta", index_inputs[-1]]
+    for key in ("genome", "gtf"):
+        if ic.get(key):
+            index_inputs.append(path_of(ic[key], f"index.{key}"))
+            index_args += [f"--{key}", index_inputs[-1]]
+
+    _threads, _res = res("build_index")
+
+    rule build_index:
+        input: index_inputs
+        output: idx = INDEX, t2g = T2G
+        log: f"{LOGS}/1_build_index.log"
+        threads: _threads
+        resources: **_res
+        params: args = shlex.join(index_args), outdir = f"{OUT}/reference"
+        shell:
+            "bash {SCRIPTS}/index/build_index.sh {params.args} "
+            "--outdir {params.outdir:q} --threads {threads} > {log:q} 2>&1"
+
+# ----------------------------------------------------------------------------
+# Steps 2-3: bulk RNA-seq
+# ----------------------------------------------------------------------------
+bc = config["bulk"]
+if bc.get("fastq_dir"):
+    BULK_DIR = os.path.abspath(bc["fastq_dir"])
+    bulk_fastqs, bulk_in_subfolders = list_fastqs(BULK_DIR, "bulk")
+    trim_settings = {"fastq_dir": BULK_DIR, "single_end": bool(bc.get("single_end")),
+                     "fastp_args": bc.get("fastp_args") or ""}
+
+    if bc.get("trim", True):
+        if bulk_in_subfolders:
+            fail("bulk reads are in one sub-folder per sample, but trimming needs all FASTQ "
+                 "files in one folder. Put them in one folder, or set bulk.trim: false")
+        TRIM_DIR = f"{OUT}/01_trimmed"
+        trim_json, trim_force = settings_check(TRIM_DIR, trim_settings)
+        trim_flags = shlex.join((["--single-end"] if bc.get("single_end") else [])
+                                + (["--fastp-args", bc["fastp_args"]] if bc.get("fastp_args") else [])
+                                + ([trim_force] if trim_force else []))
+        _threads, _res = res("trim_bulk")
+
+        rule trim_bulk:
+            input: bulk_fastqs
+            output: f"{TRIM_DIR}/fastp_summary.tsv"
+            log: f"{LOGS}/2_trim_bulk.log"
+            threads: _threads
+            resources: **_res
+            params: indir = BULK_DIR, outdir = TRIM_DIR, flags = trim_flags, settings = trim_json
+            shell:
+                "bash {SCRIPTS}/qc/run_fastp.sh --input {params.indir:q} --outdir {params.outdir:q} "
+                "--threads {threads} {params.flags} > {log:q} 2>&1 "
+                "&& printf '%s\\n' {params.settings:q} > {params.outdir:q}/pipeline_settings.json"
+
+        quant_reads, quant_indir = [f"{TRIM_DIR}/fastp_summary.tsv"], f"{TRIM_DIR}/trimmed"
+    else:
+        quant_reads, quant_indir = bulk_fastqs, BULK_DIR
+
+    QUANT_DIR = f"{OUT}/02_quant"
+    quant_settings = {"index": INDEX_ID, "trim": bool(bc.get("trim", True)), "reads": trim_settings,
+                      **{k: bc.get(k) for k in ("strand", "fragment_length", "fragment_sd", "bootstraps")}}
+    quant_json, quant_force = settings_check(QUANT_DIR, quant_settings)
+    quant_flags = shlex.join(["--strand", str(bc.get("strand", "auto")),
+                              "-l", str(bc.get("fragment_length", 200)),
+                              "-s", str(bc.get("fragment_sd", 20)),
+                              "-b", str(bc.get("bootstraps", 30))]
+                             + (["--single-end"] if bc.get("single_end") else [])
+                             + ([quant_force] if quant_force else []))
+    _threads, _res = res("quant_bulk")
+
+    rule quant_bulk:
+        input: reads = quant_reads, idx = INDEX
+        output: f"{QUANT_DIR}/quant_summary.tsv"
+        log: f"{LOGS}/3_quant_bulk.log"
+        threads: _threads
+        resources: **_res
+        params: indir = quant_indir, outdir = QUANT_DIR, flags = quant_flags, settings = quant_json
+        shell:
+            "bash {SCRIPTS}/quant/run_kallisto_quant.sh --input {params.indir:q} --index {input.idx:q} "
+            "--outdir {params.outdir:q} --threads {threads} {params.flags} > {log:q} 2>&1 "
+            "&& printf '%s\\n' {params.settings:q} > {params.outdir:q}/pipeline_settings.json"
+
+    targets.append(f"{QUANT_DIR}/quant_summary.tsv")
+
+# ----------------------------------------------------------------------------
+# Step 4: single-cell RNA-seq
+# ----------------------------------------------------------------------------
+sc = config["singlecell"]
+if sc.get("fastq_dir"):
+    SC_DIR = os.path.abspath(sc["fastq_dir"])
+    sc_fastqs, _ = list_fastqs(SC_DIR, "singlecell")
+    KB_DIR = f"{OUT}/03_kb_count"
+    kb_settings = {"index": INDEX_ID, "fastq_dir": SC_DIR,
+                   **{k: sc.get(k) for k in ("tech", "filter", "h5ad")}}
+    kb_json, kb_force = settings_check(KB_DIR, kb_settings)
+    kb_flags = shlex.join(["--tech", str(sc["tech"]), "--memory", str(sc.get("memory", "16G"))]
+                          + (["--filter"] if sc.get("filter") else [])
+                          + (["--h5ad"] if sc.get("h5ad") else [])
+                          + ([kb_force] if kb_force else []))
+    _threads, _res = res("kb_count")
+
+    rule kb_count:
+        input: reads = sc_fastqs, idx = INDEX, t2g = T2G
+        output: f"{KB_DIR}/kb_count_summary.tsv"
+        log: f"{LOGS}/4_kb_count.log"
+        threads: _threads
+        resources: **_res
+        params: indir = SC_DIR, outdir = KB_DIR, flags = kb_flags, settings = kb_json
+        shell:
+            "bash {SCRIPTS}/quant/run_kb_count.sh --input {params.indir:q} --index {input.idx:q} "
+            "--t2g {input.t2g:q} --outdir {params.outdir:q} --threads {threads} {params.flags} > {log:q} 2>&1 "
+            "&& printf '%s\\n' {params.settings:q} > {params.outdir:q}/pipeline_settings.json"
+
+    targets.append(f"{KB_DIR}/kb_count_summary.tsv")
+
+
+rule all:
+    default_target: True
+    input: targets
