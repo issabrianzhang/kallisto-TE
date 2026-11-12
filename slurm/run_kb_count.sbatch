@@ -9,8 +9,9 @@
 #
 # Use the RAW FASTQ files: single-cell reads are never trimmed.
 # Resources: our own 10x v4 mouse runs used 48 CPUs, --mem=196G and
-# --memory 120G. Less usually works too; if the job runs out of memory,
-# raise --mem and keep --memory (used for sorting barcodes) well below it.
+# --memory 120G. The index itself needs under 2 GB; most of the memory goes to
+# sorting barcodes (--memory), so less usually works too. If the job runs out
+# of memory, raise --mem and keep --memory well below it.
 # -----------------------------------------------------------------------------
 #SBATCH --job-name=kb_count
 #SBATCH --nodes=1

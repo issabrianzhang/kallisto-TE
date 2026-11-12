@@ -7,8 +7,9 @@
 #   mkdir -p logs
 #   sbatch slurm/run_kallisto_quant.sbatch
 #
-# Resources: our own mouse runs used 64G and 24-30 CPUs. Most of the memory is
-# for loading the index, so it hardly depends on the number of reads.
+# Resources: our own mouse runs used 64G and 24-30 CPUs. In testing, the mouse
+# RepBase genes + TE index needed under 2 GB of memory, so 16G is plenty if
+# your cluster queues large requests for longer.
 # -----------------------------------------------------------------------------
 #SBATCH --job-name=kallisto_quant
 #SBATCH --nodes=1

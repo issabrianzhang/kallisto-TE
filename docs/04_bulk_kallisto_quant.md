@@ -203,12 +203,20 @@ labelled `gene` or `TE` in the `type` column:
 ```
 gene_id                      gene_name                       type  Ctrl_Rep1  Ctrl_Rep2  KO_Rep1
 ENSMUSG00000057666.18        Gapdh                           gene  51234.000  49876.000  50311.000
-MMERVK10C_ERVK_Mus_musculus  TE:MMERVK10C_ERVK_Mus_musculus  TE    812.000    790.512    4410.000
+MMERVK10C_ERV2_Mus_musculus  TE:MMERVK10C_ERV2_Mus_musculus  TE    812.000    790.512    4410.000
 ```
 
 (numbers made up for illustration). A TE's ID is its name in the TE library:
 `NAME_CLASS_Species` for RepBase, `NAME_Type-Subtype` for the bundled Dfam
 libraries (e.g. `MMERVK10C_LTR-ERVK`).
+
+Don't be surprised by species names other than yours. RepBase lists each
+consensus under the species it was described in, and the mouse preset
+(`mousub.ref` + `rodrep.ref`) includes many TEs listed under rat, guinea pig,
+squirrel or human, e.g. `TE:L1-1F_Cpo_L1_Cavia_porcellus`. Only about 350 of
+its 1,740 TEs end in `Mus_musculus`. These are related TE families that can
+still pick up mouse reads; kallisto gives each read to the consensus it fits
+best.
 
 ## 6. Read the results
 

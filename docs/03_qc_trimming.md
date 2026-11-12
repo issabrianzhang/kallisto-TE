@@ -103,7 +103,9 @@ NTGCAGGTCAGCTTGACCATGGAGCTGCAGGCCTTCAAGGAGCTGGAGGCGGAGCTG...
 ```
 
 If your samples were sequenced on several lanes (`_L001_`, `_L002_`, ...),
-merge the lanes of each sample first. Plain `cat` works on gzipped files:
+each lane is trimmed and reported as its own entry (`Ctrl_S1_L001`,
+`Ctrl_S1_L002`), and step 3 combines the lanes again. For one report per
+sample instead, merge the lanes first. Plain `cat` works on gzipped files:
 
 ```bash
 cat Ctrl_S1_L001_R1_001.fastq.gz Ctrl_S1_L002_R1_001.fastq.gz > Ctrl_R1.fastq.gz

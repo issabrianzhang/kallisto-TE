@@ -6,7 +6,7 @@
 # is treated as its own small chromosome that carries exactly one gene
 # spanning the whole sequence (position 1 to its length):
 #
-#   MMERVK10C_ERVK_Mus_musculus  RepBase  gene  1  7323  .  +  .  gene_id "MMERVK10C_ERVK_Mus_musculus"; gene_type "TE"; gene_name "TE:MMERVK10C_ERVK_Mus_musculus";
+#   MMERVK10C_ERV2_Mus_musculus  RepBase  gene  1  7581  .  +  .  gene_id "MMERVK10C_ERV2_Mus_musculus"; gene_type "TE"; gene_name "TE:MMERVK10C_ERV2_Mus_musculus";
 #
 # When this GTF is appended to the genome annotation, `kb ref` turns each TE
 # gene into a single transcript/exon, so every TE consensus ends up in the

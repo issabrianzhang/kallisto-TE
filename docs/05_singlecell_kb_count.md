@@ -204,12 +204,12 @@ Things to know:
 
 * **TE names change slightly.** Seurat does not allow `_` in feature names
   and replaces it with `-` (it prints a warning), so
-  `TE:MMERVK10C_ERVK_Mus_musculus` becomes `TE:MMERVK10C-ERVK-Mus-musculus`.
+  `TE:MMERVK10C_ERV2_Mus_musculus` becomes `TE:MMERVK10C-ERV2-Mus-musculus`.
   The `TE:` prefix stays, so `grep("^TE:", rownames(seu), value = TRUE)`
   lists all TEs.
 * **TEs are ordinary features.** They are normalised, scaled and used for
   clustering like genes. Plot one with
-  `FeaturePlot(seu, "TE:MMERVK10C-ERVK-Mus-musculus")`, or compare clusters with
+  `FeaturePlot(seu, "TE:MMERVK10C-ERV2-Mus-musculus")`, or compare clusters with
   `FindMarkers()`.
 * **Several samples**: load each one as above, then combine them with
   `merge()` or integrate them.

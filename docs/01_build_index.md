@@ -56,7 +56,7 @@ flowchart LR
 2. A matching **pseudo-GTF** line declares one gene that spans the whole TE:
 
    ```
-   MMERVK10C_ERVK_Mus_musculus  RepBase  gene  1  7323  .  +  .  gene_id "MMERVK10C_ERVK_Mus_musculus"; gene_type "TE"; gene_name "TE:MMERVK10C_ERVK_Mus_musculus";
+   MMERVK10C_ERV2_Mus_musculus  RepBase  gene  1  7581  .  +  .  gene_id "MMERVK10C_ERV2_Mus_musculus"; gene_type "TE"; gene_name "TE:MMERVK10C_ERV2_Mus_musculus";
    ```
 
 3. `kb ref` extracts every transcript (genes **and** TEs) into `cdna.fa`,
@@ -228,7 +228,7 @@ bash scripts/index/prepare_te_library.sh -o mm10_TE_library.fa \
   they are replaced:
 
   ```
-  >MMERVK10C	ERVK	Mus musculus      ->  >MMERVK10C_ERVK_Mus_musculus
+  >MMERVK10C	ERV2	Mus musculus      ->  >MMERVK10C_ERV2_Mus_musculus
   >MER/ODN	DNA transposon	Rodentia  ->  >MER-ODN_DNA_transposon_Rodentia
   ```
 

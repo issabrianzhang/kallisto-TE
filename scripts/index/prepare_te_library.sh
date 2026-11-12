@@ -9,7 +9,7 @@
 #   2. Clean the headers so every TE name contains only letters, numbers,
 #      "_", "-" and ".":
 #      - RepBase-style headers (fields separated by TABs) keep all fields:
-#           >MMERVK10C<TAB>ERVK<TAB>Mus musculus  ->  >MMERVK10C_ERVK_Mus_musculus
+#           >MMERVK10C<TAB>ERV2<TAB>Mus musculus  ->  >MMERVK10C_ERV2_Mus_musculus
 #      - any other header (Dfam, RepeatModeler2, EDTA, ...) keeps only the
 #        first word, i.e. the usual FASTA sequence name:
 #           >rnd-1_family-1#LTR/Gypsy ( Recon Family Size = 25 )
