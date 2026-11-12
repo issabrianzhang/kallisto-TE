@@ -246,15 +246,15 @@ resumes after interruptions and redoes steps whose settings changed. Guide:
 
 ## Tutorial
 
-| Step | Guide | Status |
-|------|-------|--------|
-| 0 | Install (`envs/kallisto_te.yaml`) and run the toy test | ✅ |
-| 1 | [Build a genes + TE index: mouse and human](docs/01_build_index.md) | ✅ |
-| 1b | [Build an index for your own species (worked example: *Arabidopsis*)](docs/02_custom_species.md) | ✅ |
-| 2 | [Trim and check your reads with fastp + MultiQC (bulk RNA-seq)](docs/03_qc_trimming.md) | ✅ |
-| 3 | [Count genes + TEs in bulk RNA-seq (`kallisto quant`), then DESeq2](docs/04_bulk_kallisto_quant.md) | ✅ |
-| 4 | [Count genes + TEs per cell in single-cell RNA-seq (`kb count`), then Seurat](docs/05_singlecell_kb_count.md) | ✅ |
-| 5 | [Run steps 2–4 for a project in one command with Snakemake, using the index from step 1 (computer or SLURM)](docs/06_snakemake.md) | ✅ |
+| Step | Guide |
+|------|-------|
+| 0 | Install (`envs/kallisto_te.yaml`) and run the toy test |
+| 1 | [Build a genes + TE index: mouse and human](docs/01_build_index.md) |
+| 1b | [Build an index for your own species (worked example: *Arabidopsis*)](docs/02_custom_species.md) |
+| 2 | [Trim and check your reads with fastp + MultiQC (bulk RNA-seq)](docs/03_qc_trimming.md) |
+| 3 | [Count genes + TEs in bulk RNA-seq (`kallisto quant`), then DESeq2](docs/04_bulk_kallisto_quant.md) |
+| 4 | [Count genes + TEs per cell in single-cell RNA-seq (`kb count`), then Seurat](docs/05_singlecell_kb_count.md) |
+| 5 | [Run steps 2–4 for a project in one command with Snakemake, using the index from step 1 (computer or SLURM)](docs/06_snakemake.md) |
 
 Differential expression and single-cell analysis themselves are not
 covered; the guides end by loading the counts into DESeq2 and Seurat and
