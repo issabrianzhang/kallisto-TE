@@ -397,5 +397,6 @@ kallisto 0.50.
 | `ERROR: N TE(s) are missing from t2g.txt` | Check `index/kb_ref.log`. Usually a TE name with unusual characters; open an issue |
 | `kb ref` killed / out of memory | Request more memory (64 GB for mammals) |
 
-Next: preprocessing reads with fastp, then bulk / single-cell quantification
-(coming soon, see the [README roadmap](../README.md#roadmap)).
+Next: [trim and check bulk reads with fastp](03_qc_trimming.md) (step 2), then
+count genes and TEs in [bulk](04_bulk_kallisto_quant.md) (step 3) or
+[single-cell](05_singlecell_kb_count.md) (step 4) data.

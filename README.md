@@ -9,8 +9,8 @@ kallisto-TE adds the consensus sequence of every TE subfamily (e.g.
 `MMERVK10C`, `IAPEz-int`, `L1HS`, `AluY`) to the transcriptome as if it were an
 extra gene. A single pseudoalignment then gives you one count matrix with
 **genes and TE subfamilies side by side**, using the same index for bulk
-RNA-seq (`kallisto quant` / `kb count`) and droplet single-cell RNA-seq
-(`kb count`, 10x Genomics and others).
+RNA-seq (`kallisto quant`) and droplet single-cell RNA-seq (`kb count`,
+10x Genomics and others).
 
 It works for **mouse and human out of the box** and for **any other species**
 (plants, fish, insects, ...) that has a genome, a gene annotation and TE
@@ -22,12 +22,14 @@ flowchart LR
     T["TE consensus sequences<br/>(RepBase / Dfam / de novo)"] --> R
     R --> I["kallisto index<br/>genes + TEs"]
     FB["Bulk RNA-seq FASTQ"] --> P["fastp<br/>(trim / QC)"]
-    P --> QB{{"kallisto quant / kb count"}}
+    P --> QB{{"kallisto quant"}}
     FS["Single-cell FASTQ<br/>(raw, NOT trimmed)"] --> QS{{"kb count"}}
     I --> QB
     I --> QS
     QB --> B["Bulk: gene + TE counts"]
     QS --> S["scRNA-seq: cell × (gene + TE) matrix"]
+    B -.-> DE["DESeq2"]
+    S -.-> SU["Seurat / scanpy"]
 ```
 
 ---
@@ -168,6 +170,55 @@ explains every output and what "normal" looks like. On a cluster, use
 > **Single-cell RNA-seq: skip trimming.** Read 1 holds the cell barcode and
 > UMI, and `kb count` takes the raw FASTQ files.
 
+### 5. Count genes and TEs
+
+**Bulk RNA-seq**: the trimmed reads from step 4 and the index from step 3:
+
+```bash
+bash scripts/quant/run_kallisto_quant.sh \
+    --input   /path/to/project/01_trimmed/trimmed \
+    --index   /path/to/references/mm10_TE/index/mm10_GencodeM25_RepBase25.05_genes_TE.idx \
+    --outdir  /path/to/project/02_quant \
+    --threads 8
+```
+
+It works out the library strandedness from the first sample (or use
+`--strand rf|fr|unstranded`), handles paired-end and single-end samples
+(`-l 200 -s 20` fragment length for single-end), combines lanes, and writes
+per-sample kallisto results plus `matrices/gene_TE_counts.tsv` (one row per
+gene or TE). Guide: [docs/04_bulk_kallisto_quant.md](docs/04_bulk_kallisto_quant.md),
+cluster job: [`slurm/run_kallisto_quant.sbatch`](slurm/run_kallisto_quant.sbatch).
+
+**Single-cell RNA-seq**: the raw FASTQ files, the same index, and the
+technology (`10xv2`, `10xv3`, `10xv4`, ... see `kb --list`):
+
+```bash
+bash scripts/quant/run_kb_count.sh \
+    --input   /path/to/project/00_fastq_10x \
+    --index   /path/to/references/mm10_TE/index/mm10_GencodeM25_RepBase25.05_genes_TE.idx \
+    --tech    10xv3 \
+    --outdir  /path/to/project/03_kb_count \
+    --threads 8
+```
+
+It combines the lanes of each sample, ignores index reads, checks the reads
+fit the technology, and writes one cell × (gene + TE) matrix per sample.
+Guide: [docs/05_singlecell_kb_count.md](docs/05_singlecell_kb_count.md),
+cluster job: [`slurm/run_kb_count.sbatch`](slurm/run_kb_count.sbatch).
+
+### 6. Downstream analysis (not covered here)
+
+TEs are ordinary rows of the count tables, so the standard tools work
+unchanged. The guides above include tested starter code for:
+
+* **Bulk**: [tximport](https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html)
+  → [DESeq2](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html)
+  ([starter code](docs/04_bulk_kallisto_quant.md#7-next-differential-expression-with-deseq2))
+* **Single-cell**: [Seurat](https://satijalab.org/seurat/articles/pbmc3k_tutorial)
+  ([starter code](docs/05_singlecell_kb_count.md#6-next-seurat)), or
+  [scanpy](https://scanpy.readthedocs.io/en/stable/tutorials/basics/clustering.html)
+  with `--h5ad`
+
 ---
 
 ## Tutorial
@@ -178,9 +229,13 @@ explains every output and what "normal" looks like. On a cluster, use
 | 1 | [Build a genes + TE index: mouse and human](docs/01_build_index.md) | ✅ |
 | 1b | [Build an index for your own species (worked example: *Arabidopsis*)](docs/02_custom_species.md) | ✅ |
 | 2 | [Trim and check your reads with fastp + MultiQC (bulk RNA-seq)](docs/03_qc_trimming.md) | ✅ |
-| 3 | Bulk RNA-seq quantification | 🚧 coming soon |
-| 4 | Single-cell RNA-seq quantification (`kb count`) | 🚧 coming soon |
+| 3 | [Count genes + TEs in bulk RNA-seq (`kallisto quant`), then DESeq2](docs/04_bulk_kallisto_quant.md) | ✅ |
+| 4 | [Count genes + TEs per cell in single-cell RNA-seq (`kb count`), then Seurat](docs/05_singlecell_kb_count.md) | ✅ |
 | 5 | Snakemake pipeline (steps 1–4 in one command) | 🚧 coming soon |
+
+Differential expression and single-cell analysis themselves are not
+covered; the guides end by loading the counts into DESeq2 and Seurat and
+link to their tutorials.
 
 ### Ready-made presets
 
@@ -210,10 +265,18 @@ kallisto-TE/
 ├── docs/
 │   ├── 01_build_index.md              # step-by-step: mouse & human index
 │   ├── 02_custom_species.md           # step-by-step: any species (Arabidopsis example)
-│   └── 03_qc_trimming.md              # step-by-step: trim + QC reads (beginner friendly)
+│   ├── 03_qc_trimming.md              # step-by-step: trim + QC reads (beginner friendly)
+│   ├── 04_bulk_kallisto_quant.md      # step-by-step: bulk counts + DESeq2 starter code
+│   └── 05_singlecell_kb_count.md      # step-by-step: single-cell counts + Seurat starter code
 ├── scripts/
 │   ├── qc/
 │   │   └── run_fastp.sh               # trim every sample with fastp, one MultiQC report
+│   ├── quant/
+│   │   ├── run_kallisto_quant.sh      # bulk: kallisto quant every sample, gene + TE tables
+│   │   ├── summarize_kallisto.py      # combine per-sample results into gene + TE tables
+│   │   └── run_kb_count.sh            # single-cell: kb count every sample
+│   ├── lib/
+│   │   └── fastq_pairs.sh             # shared: find FASTQ files, pair R1/R2, group lanes
 │   ├── index/
 │   │   ├── build_index.sh             # one command: TE library -> pseudo-GTF -> kb ref -> check
 │   │   ├── prepare_te_library.sh      # merge, clean names, de-duplicate TE consensus FASTA
@@ -230,7 +293,9 @@ kallisto-TE/
 │   ├── build_index_mouse_mm10.sbatch
 │   ├── build_index_human_hg38.sbatch
 │   ├── build_index_custom_species.sbatch
-│   └── run_fastp.sbatch
+│   ├── run_fastp.sbatch
+│   ├── run_kallisto_quant.sbatch
+│   └── run_kb_count.sbatch
 └── test/
     └── run_toy_test.sh                # tiny end-to-end test
 ```
@@ -251,6 +316,8 @@ Each script prints its own help with `-h`, e.g.
   (free academic registration; files cannot be redistributed), or a de novo
   library (EDTA / RepeatModeler2)
 * For mammals: ~64 GB RAM and ~100 GB disk while building the index
+* Downstream (optional, not installed by the environment file): R with
+  `tximport` + `DESeq2` (Bioconductor) for bulk, `Seurat` for single-cell
 
 Prefer pip, or your own conda command, over the environment file? Install
 the same pinned version:
@@ -293,6 +360,13 @@ approach and the tools it relies on:
 * Storer J, *et al.* The Dfam community resource of transposable element
   families, sequence models, and genome annotations. *Mob DNA* 12, 2 (2021).
   (if you use the Dfam libraries)
+* Soneson C, Love MI, Robinson MD. Differential analyses for RNA-seq:
+  transcript-level estimates improve gene-level inferences. *F1000Research*
+  4, 1521 (2015). (tximport)
+* Love MI, Huber W, Anders S. Moderated estimation of fold change and
+  dispersion for RNA-seq data with DESeq2. *Genome Biol* 15, 550 (2014).
+* Hao Y, *et al.* Dictionary learning for integrative, multimodal and
+  scalable single-cell analysis. *Nat Biotechnol* 42, 293–304 (2024). (Seurat v5)
 
 ## License
 
