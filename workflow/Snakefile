@@ -1,16 +1,20 @@
 # =============================================================================
-# kallisto-TE pipeline: steps 1-4 in one command (guide: docs/06_snakemake.md)
+# kallisto-TE pipeline: steps 2-4 in one command (guide: docs/06_snakemake.md)
 #
-#   step 1  build the genes + TE index    scripts/index/build_index.sh
 #   step 2  trim bulk reads (fastp)        scripts/qc/run_fastp.sh
 #   step 3  quantify bulk (kallisto)       scripts/quant/run_kallisto_quant.sh
 #   step 4  count single-cell (kb count)   scripts/quant/run_kb_count.sh
+#
+# The genes + TE index (step 1) is NOT built here: build it once per species
+# and genome release with scripts/index/build_index.sh (docs/01_build_index.md)
+# and point every project at it, so all your analyses share the same,
+# documented reference.
 #
 # Each rule runs the same script you would run by hand, on a whole folder of
 # samples, so results are identical to the step-by-step guides.
 #
 # Run from the repository folder:
-#   snakemake --cores 8 --configfile /path/to/my_project.yaml          # this computer
+#   snakemake --cores 8 --configfile /path/to/my_project.yaml                  # this computer
 #   snakemake --profile profiles/slurm --configfile /path/to/my_project.yaml   # SLURM
 # Add -n to see what would run without running it.
 # =============================================================================
@@ -29,15 +33,6 @@ configfile: os.path.join(REPO, "config", "config.yaml")
 
 def fail(msg):
     raise WorkflowError("kallisto-TE config: " + msg)
-
-
-def path_of(p, what):
-    """Absolute path of a file named in the config; also tries the repository
-    folder (for bundled files such as te_libraries/dfam/...)."""
-    for cand in (p, os.path.join(REPO, p)):
-        if os.path.exists(cand):
-            return os.path.abspath(cand)
-    fail(f"{what} not found: {p}")
 
 
 FASTQ_EXTS = (".fastq.gz", ".fq.gz", ".fastq", ".fq")
@@ -80,69 +75,33 @@ LOGS = f"{OUT}/logs"
 targets = []
 
 # ----------------------------------------------------------------------------
-# Step 1: index
+# The index from step 1 (required)
 # ----------------------------------------------------------------------------
-ic = config["index"]
-if ic.get("existing_index"):
-    INDEX = path_of(ic["existing_index"], "index.existing_index")
-    T2G = path_of(ic.get("existing_t2g") or os.path.join(os.path.dirname(INDEX), "t2g.txt"),
-                  "t2g.txt (set index.existing_t2g)")
-    INDEX_ID = {"existing_index": INDEX, "modified": os.path.getmtime(INDEX)}
-    BUILD_INDEX = False
-else:
-    if ic["species"] not in ("mouse", "human", "custom"):
-        fail("index.species must be mouse, human or custom")
-    if not (ic.get("dfam") or ic.get("repbase") or ic.get("te_fasta")):
-        fail("choose a TE library: index.dfam, index.repbase and/or index.te_fasta")
-    if ic.get("dfam") and ic["species"] == "custom":
-        fail("index.dfam is for mouse / human; for other species list a bundled "
-             "library under index.te_fasta, e.g. te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz")
-    if ic["species"] == "custom" and not (ic.get("genome") and ic.get("gtf")):
-        fail("species custom needs index.genome and index.gtf")
-    if ic.get("d_list", "genome") not in ("genome", "none"):
-        fail("index.d_list must be genome or none")
-    INDEX = f"{OUT}/reference/index/{ic['name']}_genes_TE.idx"
-    T2G = f"{OUT}/reference/index/t2g.txt"
-    INDEX_ID = {k: ic.get(k) for k in ("species", "name", "dfam", "repbase", "repbase_libs",
-                                       "te_fasta", "genome", "gtf", "d_list")}
-    BUILD_INDEX = True
-targets.append(INDEX)
+if not config.get("index"):
+    fail("set 'index' to the .idx file of a genes + TE index. Build one first, once per "
+         "species, with scripts/index/build_index.sh (docs/01_build_index.md)")
+if not isinstance(config["index"], str):
+    fail("'index' must be the path of an .idx file, e.g. index: /path/to/mm10_genes_TE.idx. "
+         "The pipeline does not build indexes: build one with scripts/index/build_index.sh "
+         "(docs/01_build_index.md)")
+INDEX = os.path.abspath(config["index"])
+if not os.path.isfile(INDEX):
+    fail(f"index file not found: {config['index']}. Build it first with "
+         "scripts/index/build_index.sh (docs/01_build_index.md); it is the .idx file in its index/ folder")
+T2G = os.path.abspath(config.get("t2g") or os.path.join(os.path.dirname(INDEX), "t2g.txt"))
+if not os.path.isfile(T2G):
+    fail(f"t2g.txt not found next to the index ({T2G}); give its path with 't2g'")
+# A different or rebuilt index means every sample is quantified again.
+INDEX_ID = {"index": INDEX, "modified": os.path.getmtime(INDEX)}
 
-if BUILD_INDEX:
-    index_inputs, index_args = [], ["--species", ic["species"], "--name", ic["name"],
-                                    "--d-list", ic.get("d_list", "genome")]
-    if ic.get("dfam"):
-        index_args.append("--dfam")
-    if ic.get("repbase"):
-        index_inputs.append(path_of(ic["repbase"], "index.repbase"))
-        index_args += ["--repbase", index_inputs[-1]]
-    if ic.get("repbase_libs"):
-        index_args += ["--te-libs", ic["repbase_libs"]]
-    for f in ic.get("te_fasta") or []:
-        index_inputs.append(path_of(f, "index.te_fasta file"))
-        index_args += ["--te-fasta", index_inputs[-1]]
-    for key in ("genome", "gtf"):
-        if ic.get(key):
-            index_inputs.append(path_of(ic[key], f"index.{key}"))
-            index_args += [f"--{key}", index_inputs[-1]]
-
-    _threads, _res = res("build_index")
-
-    rule build_index:
-        input: index_inputs
-        output: idx = INDEX, t2g = T2G
-        log: f"{LOGS}/1_build_index.log"
-        threads: _threads
-        resources: **_res
-        params: args = shlex.join(index_args), outdir = f"{OUT}/reference"
-        shell:
-            "bash {SCRIPTS}/index/build_index.sh {params.args} "
-            "--outdir {params.outdir:q} --threads {threads} > {log:q} 2>&1"
+bc, sc = config.get("bulk") or {}, config.get("singlecell") or {}
+if not (bc.get("fastq_dir") or sc.get("fastq_dir")):
+    fail("nothing to do: set bulk.fastq_dir (bulk RNA-seq) and/or singlecell.fastq_dir "
+         "(droplet single-cell RNA-seq)")
 
 # ----------------------------------------------------------------------------
 # Steps 2-3: bulk RNA-seq
 # ----------------------------------------------------------------------------
-bc = config["bulk"]
 if bc.get("fastq_dir"):
     BULK_DIR = os.path.abspath(bc["fastq_dir"])
     bulk_fastqs, bulk_in_subfolders = list_fastqs(BULK_DIR, "bulk")
@@ -205,7 +164,6 @@ if bc.get("fastq_dir"):
 # ----------------------------------------------------------------------------
 # Step 4: single-cell RNA-seq
 # ----------------------------------------------------------------------------
-sc = config["singlecell"]
 if sc.get("fastq_dir"):
     SC_DIR = os.path.abspath(sc["fastq_dir"])
     sc_fastqs, _ = list_fastqs(SC_DIR, "singlecell")

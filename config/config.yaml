@@ -1,7 +1,8 @@
 # =============================================================================
 # kallisto-TE pipeline settings (step 5: docs/06_snakemake.md)
 #
-# Copy this file next to your data, edit it, and run from the repository:
+# Copy the parts you need into a file next to your data, edit them, and run
+# from the repository:
 #   snakemake --cores 8 --configfile /path/to/my_project.yaml
 # Anything you leave out of your copy keeps the value below.
 #
@@ -9,7 +10,6 @@
 # =============================================================================
 
 # Where all results go (created if needed):
-#   <outdir>/reference/    index built in step 1 (unless you use an existing one)
 #   <outdir>/01_trimmed/   bulk reads after fastp (step 2)
 #   <outdir>/02_quant/     bulk kallisto results (step 3)
 #   <outdir>/03_kb_count/  single-cell count matrices (step 4)
@@ -17,34 +17,17 @@
 outdir: results
 
 # ----------------------------------------------------------------------------
-# Step 1: the genes + TE index (docs/01_build_index.md, docs/02_custom_species.md)
+# The genes + TE index (required). The pipeline does not build it: build it
+# once per species / genome release with scripts/index/build_index.sh
+# (docs/01_build_index.md) and use it for every project. Give the .idx file;
+# t2g.txt is looked for next to it unless you set t2g.
 # ----------------------------------------------------------------------------
-index:
-  # Already have an index? Give its .idx file and the rest of this section is
-  # ignored. t2g.txt is looked for next to it unless you give existing_t2g.
-  existing_index: ""
-  existing_t2g: ""
-
-  # Otherwise, build one:
-  species: mouse            # mouse | human | custom
-  name: mm10_GencodeM25_Dfam4.0   # prefix for the index file
-
-  # TE library: the bundled Dfam library (mouse / human only), a RepBase
-  # archive, and/or your own TE consensus FASTA files.
-  dfam: true
-  repbase: ""               # e.g. /path/to/RepBase25.05.fasta.tar.gz
-  repbase_libs: ""          # RepBase .ref files; empty = preset default
-  te_fasta: []              # e.g. ["te_libraries/dfam/zebrafish_Dfam4.0_curated.fa.gz"]
-
-  # Genome + GTF: required for custom; for mouse / human leave empty to
-  # download the GENCODE files of the preset.
-  genome: ""
-  gtf: ""
-  d_list: genome            # genome (default) | none
+index: ""                   # e.g. /path/to/references/mm10_TE/index/mm10_GencodeM25_RepBase25.05_genes_TE.idx
+t2g: ""
 
 # ----------------------------------------------------------------------------
 # Steps 2-3: bulk RNA-seq (docs/03_qc_trimming.md, docs/04_bulk_kallisto_quant.md)
-# Leave fastq_dir empty to skip.
+# Leave fastq_dir empty to skip. Set bulk and/or single-cell.
 # ----------------------------------------------------------------------------
 bulk:
   fastq_dir: ""             # folder with the raw FASTQ files
@@ -64,17 +47,19 @@ bulk:
 singlecell:
   fastq_dir: ""             # folder with the raw FASTQ files (R1 + R2 of every lane)
   tech: 10xv3               # 10xv2 | 10xv3 | 10xv4 | ... (kb --list)
-  memory: 16G               # memory kb may use for sorting barcodes
+  memory: 16G               # memory kb may use for sorting barcodes (4G on a 16 GB computer)
   filter: false             # also write counts_filtered/ (bustools knee filter)
   h5ad: false               # also write an AnnData .h5ad file
 
 # ----------------------------------------------------------------------------
-# Threads, memory (MB) and time limit (minutes) per step. Used on a cluster
-# (--profile profiles/slurm); on one computer only threads matter, capped by
-# --cores.
+# Threads, memory (MB) and time limit (minutes) per step, used on a cluster
+# (--profile profiles/slurm). On one computer only threads matter, capped by
+# --cores. Each step is ONE job for all samples, so raise runtime for large
+# projects; a run that hits the limit resumes where it stopped.
+# Measured with a mouse genes + TE index: kallisto quant and kb count used
+# under 2 GB of memory; kb count needs about memory (above) + a few GB.
 # ----------------------------------------------------------------------------
 resources:
-  build_index: {threads: 16, mem_mb: 64000,  runtime: 1440}
-  trim_bulk:   {threads: 8,  mem_mb: 16000,  runtime: 720}
-  quant_bulk:  {threads: 16, mem_mb: 32000,  runtime: 1440}
-  kb_count:    {threads: 16, mem_mb: 128000, runtime: 1440}
+  trim_bulk:   {threads: 8,  mem_mb: 8000,  runtime: 360}
+  quant_bulk:  {threads: 8,  mem_mb: 16000, runtime: 1440}
+  kb_count:    {threads: 16, mem_mb: 64000, runtime: 1440}

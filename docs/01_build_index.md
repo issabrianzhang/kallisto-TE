@@ -340,6 +340,12 @@ grep -c 'TE:' index/t2g.txt          # number of TE subfamilies in the index
 
 For quantification you need **`index/*.idx`** and **`index/t2g.txt`**.
 
+Build each index **once** per species and genome / annotation / TE library
+release, keep it in a shared place, and use it for every project: all
+analyses then count against the same reference, and `build_info.txt`
+documents it. The pipeline (step 5) expects such an index; it does not build
+one.
+
 ---
 
 ## 8. Options and choices

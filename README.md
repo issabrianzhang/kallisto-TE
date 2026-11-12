@@ -219,18 +219,17 @@ unchanged. The guides above include tested starter code for:
   [scanpy](https://scanpy.readthedocs.io/en/stable/tutorials/basics/clustering.html)
   with `--h5ad`
 
-### 7. Or: index, trimming and counting in one command (Snakemake)
+### 7. Or: a whole project in one command (Snakemake)
 
-Once you know the steps, run a whole project from one short settings file:
+Build the index once per species (step 3 above) and reuse it. Then each
+project needs only one short settings file:
 
 ```yaml
 # my_project.yaml
 outdir: /path/to/project/results
-index:
-  species: mouse
-  dfam: true
+index: /path/to/references/mm10_TE/index/mm10_GencodeM25_RepBase25.05_genes_TE.idx
 bulk:
-  fastq_dir: /path/to/project/00_fastq
+  fastq_dir: /path/to/project/00_fastq        # and/or singlecell: {fastq_dir: ..., tech: 10xv3}
 ```
 
 ```bash
@@ -239,9 +238,9 @@ snakemake --cores 8 --configfile my_project.yaml        # this computer
 snakemake --profile profiles/slurm --configfile my_project.yaml   # SLURM cluster
 ```
 
-It builds the index (or uses an existing one), trims, quantifies bulk and/or
-single-cell data, resumes after interruptions and redoes steps whose settings
-changed. Guide: [docs/06_snakemake.md](docs/06_snakemake.md).
+It trims and quantifies bulk and/or single-cell data with that index,
+resumes after interruptions and redoes steps whose settings changed. Guide:
+[docs/06_snakemake.md](docs/06_snakemake.md).
 
 ---
 
@@ -255,7 +254,7 @@ changed. Guide: [docs/06_snakemake.md](docs/06_snakemake.md).
 | 2 | [Trim and check your reads with fastp + MultiQC (bulk RNA-seq)](docs/03_qc_trimming.md) | ✅ |
 | 3 | [Count genes + TEs in bulk RNA-seq (`kallisto quant`), then DESeq2](docs/04_bulk_kallisto_quant.md) | ✅ |
 | 4 | [Count genes + TEs per cell in single-cell RNA-seq (`kb count`), then Seurat](docs/05_singlecell_kb_count.md) | ✅ |
-| 5 | [Run steps 1–4 in one command with Snakemake (computer or SLURM)](docs/06_snakemake.md) | ✅ |
+| 5 | [Run steps 2–4 for a project in one command with Snakemake, using the index from step 1 (computer or SLURM)](docs/06_snakemake.md) | ✅ |
 
 Differential expression and single-cell analysis themselves are not
 covered; the guides end by loading the counts into DESeq2 and Seurat and
@@ -287,7 +286,7 @@ kallisto-TE/
 ├── envs/
 │   └── kallisto_te.yaml               # conda environment (kb-python, fastp, MultiQC, Snakemake)
 ├── workflow/
-│   └── Snakefile                      # step 5: steps 1-4 in one command
+│   └── Snakefile                      # step 5: steps 2-4 in one command (index from step 1)
 ├── config/
 │   └── config.yaml                    # step 5: every pipeline setting, with comments
 ├── profiles/
@@ -347,7 +346,8 @@ Each script prints its own help with `-h`, e.g.
   (open access, nothing to download), [RepBase](https://www.girinst.org/repbase/)
   (free academic registration; files cannot be redistributed), or a de novo
   library (EDTA / RepeatModeler2)
-* For mammals: ~64 GB RAM and ~100 GB disk while building the index
+* For mammals: ~32 GB RAM and ~100 GB disk while building the index (once
+  per species). Trimming and counting run on 8 cores / 16 GB
 * Downstream (optional, not installed by the environment file): R with
   `tximport` + `DESeq2` (Bioconductor) for bulk, `Seurat` for single-cell
 
