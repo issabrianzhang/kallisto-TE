@@ -10,7 +10,8 @@ bash scripts/qc/run_fastp.sh --input /path/to/fastq_folder --outdir /path/to/01_
 
 > **Single-cell RNA-seq (10x Genomics, Drop-seq, ...): skip this step.**
 > In droplet data, read 1 holds the cell barcode and UMI. Trimming it
-> breaks the barcodes. `kb count` takes the raw FASTQ files directly.
+> breaks the barcodes. `kb count` takes the raw FASTQ files directly
+> ([step 4](05_singlecell_kb_count.md)).
 > As a safety net, the script recognises this layout (a short read 1 of
 > ≤ 30 bp with a read 2 at least twice as long) and stops before trimming
 > anything.
@@ -102,7 +103,9 @@ NTGCAGGTCAGCTTGACCATGGAGCTGCAGGCCTTCAAGGAGCTGGAGGCGGAGCTG...
 ```
 
 If your samples were sequenced on several lanes (`_L001_`, `_L002_`, ...),
-merge the lanes of each sample first. Plain `cat` works on gzipped files:
+each lane is trimmed and reported as its own entry (`Ctrl_S1_L001`,
+`Ctrl_S1_L002`), and step 3 combines the lanes again. For one report per
+sample instead, merge the lanes first. Plain `cat` works on gzipped files:
 
 ```bash
 cat Ctrl_S1_L001_R1_001.fastq.gz Ctrl_S1_L002_R1_001.fastq.gz > Ctrl_R1.fastq.gz
@@ -272,5 +275,5 @@ it (use the versions from `fastp --version` and `multiqc --version`):
 > default parameters, and quality reports were summarised with MultiQC
 > v1.35.
 
-Next: quantification of genes and TEs with the trimmed reads (step 3,
-coming soon), using the files in `01_trimmed/trimmed/`.
+Next: [step 3, count genes and TEs](04_bulk_kallisto_quant.md) with the
+trimmed reads in `01_trimmed/trimmed/`.

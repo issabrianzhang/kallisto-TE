@@ -19,7 +19,7 @@
 # Options:
 #   -t, --threads      threads per fastp run (default: 8; fastp uses at most 16)
 #       --r1-tag TAG   text that marks read 1 in file names, e.g. "_R1" or "_1"
-#                      (default: auto-detect "_R1_001", "_R1" or "_1")
+#                      (default: try "_R1_001", "_R1" and "_1" for each file)
 #       --single-end   treat every file as its own single-end sample, whatever
 #                      its name (e.g. replicates named Ctrl_1 / Ctrl_2)
 #       --fastqc       also run FastQC on the raw reads (optional; fastp's own
@@ -82,74 +82,25 @@ OUT="$(cd "$OUT" && pwd)"
 IN="$(cd "$IN" && pwd)"
 
 # ----------------------------- find the files --------------------------------
-EXTS=".fastq.gz .fq.gz .fastq .fq"
-shopt -s nullglob
-all=()
-for e in $EXTS; do for f in "$IN"/*"$e"; do all+=("$f"); done; done
-[[ ${#all[@]} -gt 0 ]] || die "no FASTQ files (.fq.gz/.fastq.gz/.fq/.fastq) in $IN"
-
-ext_of() { for e in $EXTS; do [[ "$1" == *"$e" ]] && { echo "$e"; return; }; done; }
-mate_tag() { case "$1" in *R1_001) echo "${1%R1_001}R2_001" ;; *R1) echo "${1%R1}R2" ;; *1) echo "${1%1}2" ;; esac; }
-
-# Auto-detect the read-1 tag: the first of these that matches any file.
-if [[ $SINGLE -eq 1 ]]; then
-    R1TAG=""                                      # --single-end: no pairing at all
-elif [[ -z "$R1TAG" ]]; then
-    for t in _R1_001 _R1 _1; do
-        for f in "${all[@]}"; do
-            e=$(ext_of "$f"); b=$(basename "$f" "$e")
-            [[ "$b" == *"$t" ]] && { R1TAG="$t"; break 2; }
-        done
-    done
-fi
-R2TAG=""
-[[ -n "$R1TAG" ]] && R2TAG=$(mate_tag "$R1TAG")
-
-# Build the sample list: "name<TAB>R1<TAB>R2" (R2 empty for single-end).
-samples=()
-for f in "${all[@]}"; do
-    e=$(ext_of "$f"); b=$(basename "$f" "$e")
-    if [[ -n "$R1TAG" && "$b" == *"$R1TAG" ]]; then
-        name="${b%"$R1TAG"}"
-        r2="$IN/${name}${R2TAG}${e}"
-        [[ -f "$r2" ]] || r2=""
-        samples+=("$name"$'\t'"$f"$'\t'"$r2")
-    elif [[ -n "$R2TAG" && "$b" == *"$R2TAG" && -f "$IN/${b%"$R2TAG"}${R1TAG}${e}" ]]; then
-        continue                                  # handled together with its R1
-    else
-        samples+=("$b"$'\t'"$f"$'\t')             # single-end, no tag
-    fi
-done
-[[ ${#samples[@]} -gt 0 ]] || die "could not find any samples in $IN"
-
-# Check that each pair really is read 1 + read 2 of one library: mates carry
-# the same read names (first word of the header, ignoring a /1 or /2 suffix).
-read_ids() {
-    { case "$1" in *.gz) gzip -dc "$1" ;; *) cat "$1" ;; esac; } 2>/dev/null \
-        | head -n 20 | awk 'NR % 4 == 1 { id = $1; sub(/^@/, "", id); sub(/\/[12]$/, "", id); print id }' || true
-}
-checked=() not_pairs=()
-for s in "${samples[@]}"; do
-    IFS=$'\t' read -r name r1 r2 <<<"$s"
-    if [[ -n "$r2" && "$(read_ids "$r1")" != "$(read_ids "$r2")" ]]; then
-        for f in "$r1" "$r2"; do
-            checked+=("$(basename "$f" "$(ext_of "$f")")"$'\t'"$f"$'\t')
-        done
-        not_pairs+=("$(basename "$r1") + $(basename "$r2")")
-    else
-        checked+=("$s")
-    fi
-done
-samples=("${checked[@]}")
-if [[ ${#not_pairs[@]} -gt 0 ]]; then
+# shellcheck source=../lib/fastq_pairs.sh
+source "$(dirname "${BASH_SOURCE[0]}")/../lib/fastq_pairs.sh"
+find_fastq_units "$IN" "$SINGLE" "$R1TAG"
+[[ ${#FASTQ_FILES[@]} -gt 0 ]] || die "no FASTQ files (.fq.gz/.fastq.gz/.fq/.fastq) in $IN"
+all=("${FASTQ_FILES[@]}")
+samples=("${FASTQ_UNITS[@]}")
+R1TAG="$FASTQ_R1TAG"
+if [[ ${#FASTQ_NOT_PAIRS[@]} -gt 0 ]]; then
     {
         echo "NOTE: these files look like pairs by name, but their read names differ, so"
         echo "      they are NOT read 1 + read 2 of one sample. Each is trimmed as its own"
         echo "      single-end sample (typical for replicates named Ctrl_1 / Ctrl_2):"
-        printf '        %s\n' "${not_pairs[@]}"
+        printf '        %s\n' "${FASTQ_NOT_PAIRS[@]}"
     } >&2
 fi
 
+if [[ ${#FASTQ_SKIPPED[@]} -gt 0 ]]; then
+    echo "NOTE: ignoring ${#FASTQ_SKIPPED[@]} Illumina index-read file(s) (*_I1_001 / *_I2_001): they hold sample barcodes, not RNA" >&2
+fi
 n_pe=0; n_se=0
 for s in "${samples[@]}"; do [[ -n "$(cut -f3 <<<"$s")" ]] && n_pe=$((n_pe+1)) || n_se=$((n_se+1)); done
 tag_info="read-1 tag: ${R1TAG:-none}"
@@ -161,11 +112,6 @@ for s in "${samples[@]}"; do
 done
 
 # ------------------- refuse droplet single-cell reads ------------------------
-# Longest read among the first 2,000 reads of a FASTQ (gzip or plain).
-max_len() {
-    { case "$1" in *.gz) gzip -dc "$1" ;; *) cat "$1" ;; esac; } 2>/dev/null \
-        | head -n 8000 | awk 'NR % 4 == 2 { if (length($0) > m) m = length($0) } END { print m + 0 }' || true
-}
 sc_like=()
 for s in "${samples[@]}"; do
     IFS=$'\t' read -r name r1 r2 <<<"$s"
